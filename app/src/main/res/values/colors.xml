@@ -7,4 +7,21 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="recycler_view_item_swipe_left_background">#0BBD1D</color>
+    <color name="recycler_view_item_swipe_right_background">#E30000</color>
+
+
+
+    <color name="indigo">#444150</color>
+    <color name="pink">#D87234</color>
+    <color name="transparence">#D87234</color>
+    <color name="edittextcolor">#444150</color>
+    <color name="textview">#444150</color>
+    <color name="statuscolor">#D87234</color>
+
+
+    <color name="colorPrimary">#D87234</color>
+
 </resources>

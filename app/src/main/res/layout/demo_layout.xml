@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    app:dragEdge="right"
+    android:layout_marginTop="4dp"
+    app:mode="same_level">
+
+    <FrameLayout
+        android:id="@+id/delete_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+      >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/declineTextView"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="#E30000"
+                android:gravity="center"
+                android:text="decline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="@dimen/textsize"
+                android:textColor="@android:color/white" />
+
+
+
+            <ImageView
+                android:id="@+id/cancelImagview"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintTop_toTopOf="@id/declineTextView"
+                app:layout_constraintBottom_toBottomOf="@id/declineTextView"
+                app:layout_constraintStart_toStartOf="@+id/declineTextView"
+                app:layout_constraintEnd_toEndOf="@+id/declineTextView"/>
+
+
+            <TextView
+                android:layout_width="100dp"
+                android:id="@+id/accepttextView"
+                android:layout_height="match_parent"
+                android:background="#0BBD1D"
+                android:gravity="center"
+                android:text="Accept"
+                app:layout_constraintStart_toEndOf="@id/declineTextView"
+                app:layout_constraintTop_toTopOf="@id/declineTextView"
+                android:textSize="@dimen/textsize"
+                android:textColor="@android:color/white" />
+
+               <ImageView
+                   android:id="@+id/checkImagview"
+                   android:layout_width="70dp"
+                   android:layout_height="70dp"
+                   android:visibility="gone"
+                   android:src="@drawable/ic_launcher_background"
+                   app:layout_constraintTop_toTopOf="@id/accepttextView"
+                   app:layout_constraintBottom_toBottomOf="@id/accepttextView"
+                   app:layout_constraintStart_toStartOf="@+id/accepttextView"
+                   app:layout_constraintEnd_toEndOf="@+id/accepttextView"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </FrameLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/front_layout"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/bg_colors"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_img11"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerCrop"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:src="@drawable/ic_launcher_background"
+                    app:cardBackgroundColor="@android:color/transparent" />
+
+                <TextView
+                    android:id="@+id/userTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/profile_img11"
+                    app:layout_constraintStart_toEndOf="@+id/profile_img11"
+                    app:layout_constraintTop_toTopOf="@+id/profile_img11" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
