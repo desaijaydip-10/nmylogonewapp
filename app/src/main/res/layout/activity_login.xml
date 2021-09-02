@@ -59,9 +59,10 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="60dp"
         android:text="Email"
-        android:fontFamily="@font/semi"
+
         android:textSize="16dp"
         android:textColor="#D9000000"
+        android:fontFamily="@font/semi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -219,9 +220,11 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="Don’t have an acount? "
         android:textSize="17dp"
+        android:textColor="#D9000000"
+        android:fontFamily="@font/semi"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="@+id/loginButton"
         app:layout_constraintRight_toLeftOf="@+id/logintextview11"
@@ -231,7 +234,7 @@
         android:id="@+id/logintextview11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="@string/sign_up"
         android:textColor="#D87234"
         android:textSize="17dp"

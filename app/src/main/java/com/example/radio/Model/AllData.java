@@ -20,15 +20,19 @@ public class AllData {
     String mselected;
     String img_url;
     String userid;
-
-
-    public AllData() {
-
-    }
+    String checked_status;
 
 
 
-    public AllData(String  userid, String mName, String nEmail, String mPhoneNumer, String mpassword, String mdesignation, String mjointate, String mbirthdate, String mAddress, String mAdharcar, String mBloodgrp, String mCompanyemail, String mselected , String  img_url) {
+    boolean verifyCheck;
+
+
+
+
+
+    public AllData(String  userid, String mName, String nEmail, String mPhoneNumer, String mpassword, String mdesignation, String mjointate, String mbirthdate, String mAddress, String mAdharcar, String mBloodgrp,
+                   String mCompanyemail, String mselected,
+                   String  img_url,String checked_status,  boolean verifyCheck) {
         this.mName = mName;
         this.nEmail = nEmail;
         this.mPhoneNumer = mPhoneNumer;
@@ -43,7 +47,34 @@ public class AllData {
         this.mselected = mselected;
         this.img_url = img_url;
         this.userid = img_url;
+        this.checked_status = checked_status;
+        this.verifyCheck = verifyCheck;
 
+    }
+
+
+    public AllData() {
+
+    }
+
+
+
+    public boolean isVerifyCheck() {
+
+        return verifyCheck;
+    }
+
+    public void setVerifyCheck(boolean verifyCheck) {
+        this.verifyCheck = verifyCheck;
+    }
+
+
+    public String getChecked_status() {
+        return checked_status;
+    }
+
+    public void setChecked_status(String checked_status) {
+        this.checked_status = checked_status;
     }
 
 

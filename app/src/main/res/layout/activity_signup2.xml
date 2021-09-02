@@ -403,6 +403,20 @@
             android:textColor="@color/edittextcolor"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
+
+
+           <TextView
+               android:id="@+id/errortxt"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+
+               android:layout_marginRight="15dp"
+               app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName7"
+               app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName7"
+               app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName7"/>
+
+
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
@@ -619,8 +633,23 @@
             android:textColor="#A1A0A7"
             android:textCursorDrawable="@drawable/color_cursor"
             android:textSize="16dp"
-
             app:layout_constraintTop_toBottomOf="@+id/bloodgroupTextview" />
+
+
+        <TextView
+            android:id="@+id/errortxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginRight="15dp"
+            app:layout_constraintTop_toTopOf="@+id/editTextTextPersonbloodgroup"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonbloodgroup"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonbloodgroup"/>
+
+
+
+
+
 
 
         <ImageView
@@ -756,6 +785,8 @@
             android:layout_marginTop="15dp"
             android:text="Already have an account? "
             android:textSize="17dp"
+            android:textColor="#D9000000"
+            android:fontFamily="@font/semi"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="@+id/signupTextView"
             app:layout_constraintRight_toLeftOf="@+id/logintextview"
@@ -770,6 +801,7 @@
             android:textColor="#D87234"
             android:textSize="17dp"
             android:textStyle="bold"
+            android:fontFamily="@font/semi"
             app:layout_constraintEnd_toEndOf="@+id/signupTextView"
             app:layout_constraintLeft_toRightOf="@+id/textView10"
             app:layout_constraintStart_toEndOf="@+id/textView10"

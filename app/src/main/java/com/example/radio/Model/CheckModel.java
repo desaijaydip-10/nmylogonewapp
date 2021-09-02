@@ -9,6 +9,9 @@ public class CheckModel {
         Value = value;
     }
 
+    public CheckModel() {
+    }
+
     public boolean isChecked() {
         return isChecked;
     }

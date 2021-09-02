@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.radio.Model.AllData;
 import com.example.radio.R;
+import com.example.radio.UserStatusIntetFace;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,9 +23,8 @@ import java.util.TimerTask;
 public class SplashActivity2 extends AppCompatActivity {
 
 
-
-    DatabaseReference databaseReference;
-    String selecte;
+    DatabaseReference databaseReference12;
+    String selected;
 
 
     @Override
@@ -33,35 +33,8 @@ public class SplashActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
-
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
-
-
-        
-
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("user");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                    AllData allData = snapshot1.getValue(AllData.class);
-
-                    selecte = allData.getMselected();
-
-
-
-                    // Toast.makeText(SplashActivity2.this, "" + selectef, Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-
-            }
-        });
 
 
         Timer timer = new Timer();
@@ -69,14 +42,60 @@ public class SplashActivity2 extends AppCompatActivity {
             @Override
             public void run() {
 
+
                 if (currentUser != null && currentUser.isEmailVerified()) {
-                    startActivity(new Intent(SplashActivity2.this, DashboradActivity.class));
+
+
+                    databaseReference12 = FirebaseDatabase.getInstance().getReference().child("user").child(currentUser.getUid());
+                   databaseReference12.addValueEventListener(new ValueEventListener() {
+                       @Override
+                       public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                           String em2 = snapshot.child("mselected").getValue(String.class);
+
+                           if (em2.equals("HR"))
+                           {
+
+                               startActivity(new Intent(SplashActivity2.this, DashboradActivity.class));
+
+                           }
+                           else {
+                               startActivity(new Intent(SplashActivity2.this, UserDataActivity.class));
+
+                           }
+
+                       }
+
+                       @Override
+                       public void onCancelled(@NonNull DatabaseError error) {
+
+                       }
+                   });
+
+
 
                 } else {
                     startActivity(new Intent(SplashActivity2.this, LoginActivity.class));
+
                 }
 
             }
+
+
         }, 2000);
+
+
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+

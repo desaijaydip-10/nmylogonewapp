@@ -17,9 +17,13 @@ import android.widget.Toast;
 
 import com.example.radio.Adapter.DashbordAdapter;
 import com.example.radio.Model.AllData;
+import com.example.radio.Model.CheckModel;
 import com.example.radio.R;
 import com.example.radio.UserInterface;
+import com.example.radio.UserStatusIntetFace;
 import com.example.radio.databinding.ActivityDashboradBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class DashboradActivity extends AppCompatActivity implements UserInterface , DashbordAdapter.CheckedStatuts {
+public class DashboradActivity extends AppCompatActivity implements UserInterface {
 
 
     ActivityDashboradBinding dashboradBinding;
@@ -40,9 +44,13 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
     RecyclerView recyclerView;
     Toolbar toolbar;
     String selectef;
-    static boolean checked = false;
+    static boolean checked;
+
+    String value;
 
     DashbordAdapter dashbordAdapter;
+    private DatabaseReference databaseReference1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +68,9 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
         getSupportActionBar().setTitle("HR Login");
 
 
+        // setUpdateValue();
+
+
         if (Build.VERSION.SDK_INT >= 21) {
 
             Window window = this.getWindow();
@@ -70,14 +81,56 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
 
         databaseReference.addValueEventListener(new ValueEventListener() {
 
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                    AllData allData = snapshot1.getValue(AllData.class);
+                arrayList.clear();
 
-                    arrayList.add(allData);
+
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+
+                    AllData allData = snapshot1.getValue(AllData.class);
+                    String selected = allData.getMselected();
+                    boolean check = allData.isVerifyCheck();
+
+
+                    if (selected.equals("Employee")  &&  check== true) {
+
+                        arrayList.add(allData);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(DashboradActivity.this));
+                        dashbordAdapter = new DashbordAdapter(DashboradActivity.this, arrayList, value, new UserStatusIntetFace() {
+                            @Override
+                            public void userStatusInterface(String statuschecked, String postion) {
+
+                                databaseReference.child(postion).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                        snapshot.getRef().child("checked_status").setValue(statuschecked);
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+                                    }
+                                });
+
+                            }
+                        });
+
+                        recyclerView.setAdapter(dashbordAdapter);
+                        dashbordAdapter.notifyDataSetChanged();
+                    } else {
+
+
+                    }
+
+
                 }
+
 
             }
 
@@ -88,36 +141,70 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
         });
 
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(DashboradActivity.this, LinearLayoutManager.VERTICAL, false));
-        dashbordAdapter = new DashbordAdapter(DashboradActivity.this, arrayList, this);
-
-        recyclerView.setAdapter(dashbordAdapter);
-        dashbordAdapter.notifyDataSetChanged();
-
-
         dashboradBinding.loggout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 FirebaseUser user = auth.getCurrentUser();
                 if (user != null) {
-                    auth.signOut();
 
-                    Toast.makeText(DashboradActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(DashboradActivity.this, LoginActivity.class));
+                    databaseReference1 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid());
+                    databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            //   String userlogin2 = snapshot.child("userlogin").getValue(String.class);
+                            snapshot.getRef().child("userlogin").setValue("0");
+                            auth.signOut();
+
+
+                            Toast.makeText(DashboradActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(DashboradActivity.this, LoginActivity.class));
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+
+                        }
+                    });
+
+
                 }
 
             }
         });
 
+    }
+
+    private void setUpdateValue() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("statuscheck");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+
+                    CheckModel checkModel = snapshot1.getValue(CheckModel.class);
+                    checked = checkModel.isChecked();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
 
-
     @Override
     public void userdata(int postion) {
-
 
         Intent intent = new Intent(DashboradActivity.this, UserDataActivity.class);
         intent.putExtra("pos", postion);
@@ -128,16 +215,15 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-         finishAffinity();
+        finishAffinity();
     }
-
-
-    @Override
-    public void checkValue(boolean var) {
-
-
-
-
-
-    }
+//
+//    @Override
+//    public void userStatusInterface(String statuschecked, String postion) {
+//
+//
+//
+//
+//
+//    }
 }

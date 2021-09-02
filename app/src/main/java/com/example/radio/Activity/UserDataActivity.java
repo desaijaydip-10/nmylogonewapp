@@ -4,11 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.radio.Model.AllData;
 import com.example.radio.Model.StatusCheckModel;
 import com.example.radio.R;
 import com.example.radio.databinding.ActivityUserDataBinding;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,9 +25,13 @@ public class UserDataActivity extends AppCompatActivity {
 
     ActivityUserDataBinding dataBinding;
     DatabaseReference databaseReference1;
-    private boolean isCheck;
-    private String value;
+
+     String value;
     TextView textView;
+    String  nm;
+
+    FirebaseAuth firebaseAuth;
+
 
 
     @Override
@@ -35,26 +43,38 @@ public class UserDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_data);
         textView = findViewById(R.id.changeTextView);
 
-        DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("statuscheck");
+
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("user");
 
         databaseReference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    StatusCheckModel statusCheckModel= dataSnapshot.getValue(StatusCheckModel.class);
-                    isCheck= statusCheckModel.isChecked();
-                    value= statusCheckModel.getValue();
+                              nm= snapshot.child(firebaseAuth.getCurrentUser().getUid()).child("checked_status").getValue(String.class);
 
-                    if(isCheck==true){
-                        textView.setText(value);
-                    }
-                    else {
-                        textView.setText("Waitng for aprrove reques");
-                    }
-                }
+                              if(nm.equals("0")){
+                                  textView.setText("Pending !!");
 
-            }
+                              }
+                              else if(nm.equals("1")){
+                                  textView.setText("Successfully  Aprrove");
+                              }
+                              else {
+
+                                  textView.setText("Decline !!");
+                              }
+
+                    }
+
+
+
+
+
+
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -65,7 +85,12 @@ public class UserDataActivity extends AppCompatActivity {
 
 
 
+    }
 
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

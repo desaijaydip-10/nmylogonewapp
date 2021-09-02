@@ -1,6 +1,7 @@
 package com.example.radio.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,9 +21,12 @@ import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 
 import com.example.radio.Activity.DashboradActivity;
+import com.example.radio.Activity.ProfileActivity;
 import com.example.radio.Model.AllData;
 import com.example.radio.Model.CheckModel;
 import com.example.radio.R;
+import com.example.radio.UserInterface;
+import com.example.radio.UserStatusIntetFace;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -48,43 +52,76 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
 
     private Context context;
     private ArrayList<AllData> arrayList;
-     //CheckedStatuts checkedStatuts;
 
+    UserStatusIntetFace userStatusIntetFace;
     private ViewBinderHelper binderHelper = new ViewBinderHelper();
-    boolean checked;
-    String url;
+    boolean checked, statuschecek;
+
     FirebaseAuth auth;
+    String statuschecked;
+    String value;
     private StorageReference storageReference;
+//    UserStatusIntetFace userStatusIntetFace;
 
-
-    public DashbordAdapter(Context context, ArrayList<AllData> arrayList, DashboradActivity dashboradActivity) {
+    public DashbordAdapter(Context context, ArrayList<AllData> arrayList,  String value, UserStatusIntetFace userStatusIntetFace) {
 
         this.context = context;
         this.arrayList = arrayList;
 
+        this.value = value;
+        this.userStatusIntetFace = userStatusIntetFace;
         auth = FirebaseAuth.getInstance();
-        // checkedStatuts = dashboradActivity;
+
     }
+
 
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.demo_layout, parent, false);
-       // view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
-
+        view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
         return new CustomViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
 
 
-        if (arrayList.get(position).getImg_url() == null) {
 
-             holder.pf_img.setBackgroundResource(R.drawable.ic_user);
+
+        if (arrayList.get(position).getChecked_status().equals("1")) {
+
+            holder.accepttextView.setText(null);
+            holder.checkImg.setVisibility(View.VISIBLE);
+            holder.checkImg.setImageResource(R.drawable.ic_baseline_check_24);
+            holder.img.setVisibility(View.VISIBLE);
+            holder.img.setImageResource(R.drawable.ic_right);
+
+
+            binderHelper.lockSwipe(arrayList.get(position).getUserid());
+
+
+        }
+        else if (arrayList.get(position).getChecked_status().equals("2")) {
+
+            holder.img.setVisibility(View.VISIBLE);
+            holder.img.setImageResource(R.drawable.ic_cancel_svgrepo_com);
+
+        } else {
+
+            binderHelper.closeLayout(String.valueOf(holder.swipeLayout));
+            holder.img.setVisibility(View.VISIBLE);
+            holder.img.setImageResource(R.drawable.ic_baseline_pending_24);
+
         }
 
+        if (arrayList.get(position).getImg_url() == null) {
+
+            holder.pf_img.setBackgroundResource(R.drawable.ic_user);
+
+        }
 
         holder.textView.setText(arrayList.get(position).getmName());
         Glide.with(context).load(arrayList.get(position).getImg_url()).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.pf_img);
@@ -92,40 +129,50 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
         binderHelper.bind(holder.swipeLayout, arrayList.get(position).getmName());
         holder.bind(arrayList.get(position).getmName());
 
-
-
-        holder.frontLayout.setOnClickListener(new View.OnClickListener() {
+        holder.swipeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String displayText = "" + arrayList.get(position).getmName() + " clicked";
-                Toast.makeText(context, displayText, Toast.LENGTH_SHORT).show();
 
-
+                binderHelper.closeLayout(arrayList.get(position).getUserid());
+                holder.swipeLayout.setLockDrag(false);
+                context.startActivity(new Intent(context, DashboradActivity.class));
             }
         });
-
 
         holder.accepttextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                checked = true;
-                String value = "Request Accept";
 
-                DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("statuscheck");
+                statuschecked = "1";
+                userStatusIntetFace.userStatusInterface(statuschecked, arrayList.get(position).getUserid());
 
-                databaseReference1.child(UUID.randomUUID().toString()).setValue(new CheckModel(checked, value)).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
+                holder.accepttextView.setText(null);
+                holder.checkImg.setVisibility(View.VISIBLE);
+                holder.checkImg.setImageResource(R.drawable.ic_baseline_check_24);
+
+                holder.img.setImageResource(R.drawable.ic_right);
+
+                holder.swipeLayout.close(false);
+                holder.swipeLayout.setLockDrag(true);
+
+                binderHelper.lockSwipe(arrayList.get(position).getUserid());
 
 
-                        holder.accepttextView.setText(null);
-                        holder.checkImg.setVisibility(View.VISIBLE);
-                        holder.checkImg.setImageResource(R.drawable.ic_baseline_check_24);
+
+//                binderHelper.closeLayout(arrayList.get(position).getUserid());
+//
 
 
-                    }
-                });
+//                DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("statuscheck");
+//
+//                databaseReference1.child(FirebaseAuth.getInstance().getCurrentUser().toString()).setValue(new CheckModel(checked, value)).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+
+
+//                    }
+//                });
             }
         });
 
@@ -133,29 +180,51 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
             @Override
             public void onClick(View v) {
 
-                if (checked == true) {
-                    Toast.makeText(context, "Request Approve", Toast.LENGTH_SHORT).show();
-                } else {
-                    holder.declinetxt.setText(null);
-                    holder.cancelImg.setVisibility(View.VISIBLE);
-                    holder.cancelImg.setImageResource(R.drawable.ic_baseline_cancel_24);
 
-                }
+                statuschecked = "2";
+                userStatusIntetFace.userStatusInterface(statuschecked, arrayList.get(position).getUserid());
 
+                holder.declinetxt.setText(null);
+                holder.cancelImg.setVisibility(View.VISIBLE);
+                holder.cancelImg.setImageResource(R.drawable.ic_baseline_cancel_24);
+                holder.img.setImageResource(R.drawable.ic_cancel_svgrepo_com);
+
+
+                holder.swipeLayout.close(false);
+                holder.swipeLayout.setLockDrag(true);
+                holder.swipeLayout.cancelLongPress();
 
             }
         });
 
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+
+                context.startActivity(new Intent(context, ProfileActivity.class));
+            }
+        });
+
+
+//        holder.swipeLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, "errro", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+
     }
 
-    public void saveStates(Bundle outState) {
-        binderHelper.saveStates(outState);
-    }
-
-    public void restoreStates(Bundle inState) {
-        binderHelper.restoreStates(inState);
-    }
+//    public void saveStates(Bundle outState) {
+//        binderHelper.saveStates(outState);
+//    }
+//
+//    public void restoreStates(Bundle inState) {
+//        binderHelper.restoreStates(inState);
+//    }
 
 //
 
@@ -167,15 +236,12 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
 
-
-        ImageView pf_img, checkImg, cancelImg;
-
-
+        ImageView pf_img, checkImg, cancelImg, img;
         SwipeRevealLayout swipeLayout;
         View frontLayout;
         View deleteLayout;
         TextView textView, accepttextView, declinetxt;
-        ;
+
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -186,27 +252,23 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
             textView = (TextView) itemView.findViewById(R.id.userTextView);
             accepttextView = itemView.findViewById(R.id.accepttextView);
 
+
             declinetxt = itemView.findViewById(R.id.declineTextView);
             checkImg = itemView.findViewById(R.id.checkImagview);
             cancelImg = itemView.findViewById(R.id.cancelImagview);
 
             pf_img = itemView.findViewById(R.id.profile_img11);
-
+            img = itemView.findViewById(R.id.imgcheckvalue);
         }
 
 
         public void bind(final String data) {
 
 
-
         }
 
 
-
     }
-
-
-
 
 
 }

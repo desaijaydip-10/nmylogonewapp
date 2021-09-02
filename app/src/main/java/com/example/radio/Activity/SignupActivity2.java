@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
@@ -23,12 +24,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.radio.Adapter.SpinnerAdapterA;
 import com.example.radio.Model.RegisterModel;
 import com.example.radio.R;
+import com.example.radio.UserStatusIntetFace;
 import com.example.radio.databinding.ActivitySignup2Binding;
 import com.example.radio.utils.PhoneTextFormatter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,12 +56,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.UUID;
 import java.util.regex.Pattern;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SignupActivity2 extends AppCompatActivity  implements MultiplePermissionsListener {
+public class SignupActivity2 extends AppCompatActivity implements MultiplePermissionsListener {
 
 
     ActivitySignup2Binding activitySignup2Binding;
@@ -68,8 +70,14 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
     private FirebaseAuth mAuth;
     String imageUri = "";
 
+    Spinner spinner, spinner2;
+    boolean verifyCheck = false;
+
     AlertDialog dialog5;
     String uid = null;
+
+
+    String ischecked = "0";
 
 
     CircleImageView profile_img;
@@ -80,6 +88,9 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
     RadioButton radiohr, radioemp;
     FirebaseStorage storage;
     StorageReference storageRef;
+    TextView textView, textview2;
+
+    String chechedstatus = "0";
 
 
     private static final Pattern PASSWORD_PATTERN =
@@ -100,19 +111,20 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
         emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         regexStr = "^[0-9]$";
-
-
         rg = findViewById(R.id.rbg);
 
-
+        spinner = findViewById(R.id.editTextTextPersonName7);
+        spinner2 = findViewById(R.id.editTextTextPersonbloodgroup);
 
 
         radiohr = findViewById(R.id.radiobuttomHr);
         radioemp = findViewById(R.id.radiobuttonemp);
+        textView = findViewById(R.id.errortxt);
+        textview2 = findViewById(R.id.errortxt2);
+
 
         userEdittext = findViewById(R.id.editTextTextPersonName6);
         userEdittext.addTextChangedListener(new PhoneTextFormatter(userEdittext, " ##### #####"));
-
 
         userAdharCard = findViewById(R.id.editTextTextPersonAharCard);
         userAdharCard.addTextChangedListener(new PhoneTextFormatter(userAdharCard, " #### #### ####"));
@@ -124,7 +136,6 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("user");
         mAuth = FirebaseAuth.getInstance();
-
 
         myCalendar = Calendar.getInstance();
 
@@ -153,12 +164,6 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
             }
         });
-
-
-//        RadioButton value = (RadioButton)findViewById(rg.getCheckedRadioButtonId());
-//
-//         mselector = value.getText().toString();
-//
 
 
         activitySignup2Binding.logintextview.setOnClickListener(new View.OnClickListener() {
@@ -313,6 +318,10 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
         String company_email = activitySignup2Binding.editTextTextCompanyEmail.getText().toString().trim();
 
 
+        int selectedItemOfMySpinner = spinner.getSelectedItemPosition();
+        String actualPositionOfMySpinner = (String) spinner.getItemAtPosition(selectedItemOfMySpinner);
+
+
         if (profile_img == null) {
 
             Toast.makeText(this, "Please Select Image", Toast.LENGTH_SHORT).show();
@@ -360,6 +369,25 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
             activitySignup2Binding.editTextTextPersonName6.requestFocus();
 
 
+        } else if (spinner.getSelectedItem().toString().trim().equals("Designation")) {
+
+            //  Toast.makeText(this, "designation", Toast.LENGTH_SHORT).show();
+
+            // textView.setVisibility(View.VISIBLE);
+            textView.setError("Filled  Requied");
+            textView.requestFocus();
+
+
+//            View selectedView = spinner.getSelectedView();
+//            if (selectedView != null && selectedView instanceof TextView) {
+//                TextView selectedTextView = (TextView) selectedView;
+//
+//                // String errorString = selectedTextView.getResources().getString(mErrorStringResource);
+//                selectedTextView.setError("errorString");
+//
+//
+//            }
+
         } else if (activitySignup2Binding.spinner2.getText().toString().isEmpty()) {
             activitySignup2Binding.spinner2.setError("Filled required");
             activitySignup2Binding.spinner2.requestFocus();
@@ -382,6 +410,22 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
             activitySignup2Binding.editTextTextPersonAharCard.setError("Enter valid  Adharcard number");
             activitySignup2Binding.editTextTextPersonAharCard.requestFocus();
 
+        } else if (spinner2.getSelectedItem().toString().trim().equals("Blood group")) {
+
+
+            textview2.setVisibility(View.VISIBLE);
+            textview2.setError("Filled  Requied");
+            textview2.requestFocus();
+
+
+//
+//            View selectedView = spinner2.getSelectedView();
+//
+//            TextView selectedTextView = (TextView) selectedView;
+
+
+            //   Toast.makeText(this, "please blood Group select", Toast.LENGTH_SHORT).show();
+            // selectedTextView.setError("Error blood group");
         } else if (activitySignup2Binding.editTextTextCompanyEmail.getText().toString().trim().isEmpty()) {
 
             activitySignup2Binding.editTextTextCompanyEmail.setError("Filled required");
@@ -397,9 +441,8 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
             activitySignup2Binding.editTextTextCompanyEmail.setError("Enter Company valid  Email");
             activitySignup2Binding.editTextTextCompanyEmail.requestFocus();
-        }
+        } else {
 
-        else {
 
 //                        DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
 //                                .setLink(Uri.parse("https://appdemo12.page.link/verify"))
@@ -449,12 +492,18 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
                         dialog5.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                         dialog5.setView(view4);
+
+
+                        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+
                         dialog5.show();
-
-
                         uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                        StorageReference storageRef  = FirebaseStorage.getInstance().getReference("Images");
+
+                        StorageReference storageRef = FirebaseStorage.getInstance().getReference("Images");
+
 
                         StorageReference ref = storageRef.child(System.currentTimeMillis() + "." + getExtension(imageUri));
                         ref.putFile(Uri.parse(imageUri)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -465,8 +514,10 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         imageurl2 = uri.toString();
+
                                         //  reference2.setValue(imageurl);//store link in database
 //                        Log.i("Image url", uri.toString());
+
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -478,23 +529,28 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
                         });
 
 
-
                         RegisterModel model = new RegisterModel(uid, username, useremail, password, mobilenumber, userdesignation, userdateofjoin,
-                                userdob, useraddress, addharcard, bloodgrp, company_email, imageurl2);
+                                userdob, useraddress, addharcard, bloodgrp, company_email, imageurl2, chechedstatus, ischecked, verifyCheck);
                         model.setMselected(mselector);
 
 
-
-                        // to create   databaserefrence  uploade  data
-
-
+                        //  to create   databaserefrence  uploade  data
                         databaseReference.child(uid).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
                                 if (task.isSuccessful()) {
 
-                                    progressBar23.setVisibility(View.GONE);
+                                    // progressBar23.setVisibility(View.GONE);
+//                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+//
+//
+//                                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+//                                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+//
+//
+                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
                                     dialog5.dismiss();
 
                                     mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -503,14 +559,10 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
                                         public void onComplete(@NonNull Task<Void> task) {
 
                                             if (task.isSuccessful()) {
-//
-                                               // FirebaseStorage storage = FirebaseStorage.getInstance();
-                                               // StorageReference storageRef = storage.getReference().child("userchild");
 
 
-
-
-
+                                                // FirebaseStorage storage = FirebaseStorage.getInstance();
+                                                // StorageReference storageRef = storage.getReference().child("userchild");
 //                                                storageRef.child("Img").putFile(Uri.parse(imageUri)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 //                                                    @Override
 //                                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -527,23 +579,40 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
                                                 View view2 = getLayoutInflater().inflate(R.layout.alertdialog, null);
                                                 dialog1.setView(view2);
+
+
+//                                                getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+//                                                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+////
+
+
                                                 TextView btn = view2.findViewById(R.id.Button12);
 
 
                                                 btn.setOnClickListener(new View.OnClickListener() {
                                                     @Override
                                                     public void onClick(View v) {
+
+                                                       // getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+
                                                         startActivity(new Intent(SignupActivity2.this, LoginActivity.class));
+
                                                         dialog1.dismiss();
                                                     }
                                                 });
+
+
                                                 dialog1.show();
                                             } else {
+
                                                 Toast.makeText(SignupActivity2.this, "" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
                                 } else {
+
+
                                     Toast.makeText(SignupActivity2.this, "" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -551,7 +620,7 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
                     } else {
 
-                        Toast.makeText(SignupActivity2.this, "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignupActivity2.this, "user already sigg up   ", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -559,6 +628,11 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
 
         }
 
+    }
+
+    private String getString(String s) {
+
+        return "Fileed require";
     }
 
 
@@ -626,4 +700,20 @@ public class SignupActivity2 extends AppCompatActivity  implements MultiplePermi
     public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
 
     }
+
+
+    private void setSpinnerError(Spinner spinner, String error) {
+        View selectedView = spinner.getSelectedView();
+        if (selectedView != null && selectedView instanceof TextView) {
+            spinner.requestFocus();
+            TextView selectedTextView = (TextView) selectedView;
+            selectedTextView.setError("error"); // any name of the error will do
+            selectedTextView.setTextColor(Color.RED); //text color in which you want your error message to be displayed
+            selectedTextView.setText(error); // actual error message 
+            spinner.performClick(); // to open the spinner list if error is found.
+
+        }
+    }
+
+
 }

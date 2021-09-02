@@ -19,9 +19,15 @@ public class RegisterModel {
      String selected;
      String userid;
      String img_url;
+     String checked_status;
+     String userlogin;
+     boolean verifyCheck;
 
 
-     public RegisterModel(String userid, String mName, String nEmail, String password, String mPhoneNumer, String mdesignation, String mjointate, String mbirthdate, String mAddress, String mAdharcar, String mBloodgrp, String mCompanyemail, String img_url) {
+     public RegisterModel(String userid, String mName, String nEmail,
+                          String password, String mPhoneNumer, String mdesignation, String mjointate, String mbirthdate, String mAddress, String mAdharcar, String mBloodgrp, String mCompanyemail,
+                          String img_url, String checked_status,
+                          String ischecked, boolean verifyCheck) {
           this.mName = mName;
           this.nEmail = nEmail;
           this.mpassword = password;
@@ -36,6 +42,38 @@ public class RegisterModel {
         //  this.mselected = selected;
           this.img_url = img_url;
           this.userid = userid;
+          this.checked_status = checked_status;
+          this.userlogin = ischecked;
+          this.verifyCheck = verifyCheck;
+
+     }
+
+
+     public boolean isVerifyCheck() {
+          return verifyCheck;
+     }
+
+     public void setVerifyCheck(boolean verifyCheck) {
+          this.verifyCheck = verifyCheck;
+     }
+
+     public String getUserlogin() {
+          return userlogin;
+     }
+
+     public void setUserlogin(String userlogin) {
+          this.userlogin = userlogin;
+     }
+
+
+
+     public String getChecked_status()
+     {
+          return checked_status;
+     }
+
+     public void setChecked_status(String checked_status) {
+          this.checked_status = checked_status;
      }
 
 
@@ -71,8 +109,7 @@ public class RegisterModel {
      }
 
      public void setUserid(String userid) {
-
-               this.userid = userid;
+          this.userid = userid;
      }
 
 

@@ -2,26 +2,26 @@ package com.example.radio.Model;
 
 public class StatusCheckModel {
 
-    private boolean isChecked;
+    String checkvalue ;
     private String Value;
 
 
-    public StatusCheckModel(boolean isChecked, String value) {
-        this.isChecked = isChecked;
+    public StatusCheckModel(String checkvalue, String value) {
+        this.checkvalue = checkvalue;
         Value = value;
     }
 
 
     public StatusCheckModel() {
-
     }
 
-    public boolean isChecked() {
-        return isChecked;
+
+    public String getCheckvalue() {
+        return checkvalue;
     }
 
-    public void setChecked(boolean checked) {
-        isChecked = checked;
+    public void setCheckvalue(String checkvalue) {
+        this.checkvalue = checkvalue;
     }
 
     public String getValue() {
