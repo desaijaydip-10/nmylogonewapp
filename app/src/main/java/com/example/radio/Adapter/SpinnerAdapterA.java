@@ -36,11 +36,13 @@ public class SpinnerAdapterA extends ArrayAdapter<String> {
         View row = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_layout, parent, false);
 
 
-        final TextView label=(TextView)row.findViewById(R.id.tv_spinnervalue);
+        final TextView label=(TextView)row.findViewById(R.id.textView19);
 
         if(position ==0){
+
             label.setTextColor(Color.GRAY);
         }
+
         label.setText(objects[position]);
         return row;
     }

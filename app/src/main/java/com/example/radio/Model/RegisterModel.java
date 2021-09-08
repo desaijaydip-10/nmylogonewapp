@@ -18,7 +18,7 @@ public class RegisterModel {
      String mCompanyemail;
      String selected;
      String userid;
-     String img_url;
+     String imgurl;
      String checked_status;
      String userlogin;
      boolean verifyCheck;
@@ -39,8 +39,8 @@ public class RegisterModel {
           this.mAdharcar = mAdharcar;
           this.mBloodgrp = mBloodgrp;
           this.mCompanyemail = mCompanyemail;
-        //  this.mselected = selected;
-          this.img_url = img_url;
+
+          this.imgurl = img_url;
           this.userid = userid;
           this.checked_status = checked_status;
           this.userlogin = ischecked;
@@ -87,12 +87,12 @@ public class RegisterModel {
           this.selected = mselected;
      }
 
-     public String getImg_url() {
-          return img_url;
+     public String getImgurl() {
+          return imgurl;
      }
 
-     public void setImg_url(String img_url) {
-          this.img_url = img_url;
+     public void setImgurl(String imgurl) {
+          this.imgurl = imgurl;
      }
 
      public String getMpassword() {

@@ -1,0 +1,170 @@
+[
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash2.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_splash2.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_employe.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_employe.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_user_data2.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_user_data2.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_employe_edit_profile.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_employe_edit_profile.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_dashborad.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_dashborad.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\alertdialog.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\alertdialog.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\emp_all_data_layout.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\emp_all_data_layout.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_profile.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_info_hr.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_info_hr.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_check_time.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_check_time.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_dashborad2.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_dashborad2.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_user_data.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_user_data.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header_employe.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\nav_header_employe.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header_main.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom_dialoge_layout.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\custom_dialoge_layout.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup22.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_signup22.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_employe.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_employe.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login1.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_login1.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_user_profile.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_user_profile.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom_layout.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\custom_layout.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\custom.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom_layout_new.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\custom_layout_new.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom_dashbord.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\custom_dashbord.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_list_time.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_list_time.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\rejected.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\rejected.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\accept.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\accept.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_leaves.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_leaves.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\app_bar_main.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_user_attendence.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_user_attendence.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\emp_layout_custom.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\emp_layout_custom.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_employe_info.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_employe_info.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_hr_profilek.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_hr_profilek.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custom_empinfo_layout.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\custom_empinfo_layout.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_request.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_request.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_attendence.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\fragment_attendence.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\demo_layout.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\demo_layout.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_signup2.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_signup2.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_employess.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\activity_employess.xml"
+    },
+    {
+        "merged": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\spinner_dialoge.xml",
+        "source": "D:\\radio\\app\\src\\main\\res\\layout\\spinner_dialoge.xml"
+    }
+]

@@ -88,8 +88,7 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
 
-
-
+        AllData allData= arrayList.get(position);
 
         if (arrayList.get(position).getChecked_status().equals("1")) {
 
@@ -98,7 +97,6 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
             holder.checkImg.setImageResource(R.drawable.ic_baseline_check_24);
             holder.img.setVisibility(View.VISIBLE);
             holder.img.setImageResource(R.drawable.ic_right);
-
 
             binderHelper.lockSwipe(arrayList.get(position).getUserid());
 
@@ -198,12 +196,18 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
         });
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 
 
-                context.startActivity(new Intent(context, ProfileActivity.class));
+              //  context.startActivity(new Intent(context, ProfileActivity.class));
+
+                Intent intent= new Intent(context, ProfileActivity.class);
+                intent.putExtra("data", allData);
+                context.startActivity(intent);
+
+                // Toast.makeText(context, "yes", Toast.LENGTH_SHORT).show();
             }
         });
 

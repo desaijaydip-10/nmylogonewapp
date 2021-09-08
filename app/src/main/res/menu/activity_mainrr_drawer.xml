@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/attendece_"
+        android:icon="@drawable/ic_calendar_with_check_mark_1"
+        android:title="attendence" />
+
+
+    <item
+        android:id="@+id/profile_"
+        android:icon="@drawable/ic_user_3"
+        android:title="Profile" />
+
+
+    <item
+        android:id="@+id/emp_info_"
+        android:icon="@drawable/ic_vector__4_"
+        android:title="Employee Info" />
+
+    <item
+        android:id="@+id/logout_"
+        android:icon="@drawable/ic_exit_1"
+        android:title="Logout" />
+
+
+</menu>

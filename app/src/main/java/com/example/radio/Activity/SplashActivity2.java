@@ -47,31 +47,27 @@ public class SplashActivity2 extends AppCompatActivity {
 
 
                     databaseReference12 = FirebaseDatabase.getInstance().getReference().child("user").child(currentUser.getUid());
-                   databaseReference12.addValueEventListener(new ValueEventListener() {
-                       @Override
-                       public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    databaseReference12.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                           String em2 = snapshot.child("mselected").getValue(String.class);
+                            String em2 = snapshot.child("mselected").getValue(String.class);
 
-                           if (em2.equals("HR"))
-                           {
+                            if (em2.equals("HR")) {
+                                startActivity(new Intent(SplashActivity2.this, InfoHrActivity.class));
 
-                               startActivity(new Intent(SplashActivity2.this, DashboradActivity.class));
+                            } else {
+                                startActivity(new Intent(SplashActivity2.this, UserAttendenceActivity.class));
 
-                           }
-                           else {
-                               startActivity(new Intent(SplashActivity2.this, UserDataActivity.class));
+                            }
 
-                           }
+                        }
 
-                       }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                       @Override
-                       public void onCancelled(@NonNull DatabaseError error) {
-
-                       }
-                   });
-
+                        }
+                    });
 
 
                 } else {

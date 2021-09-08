@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+      <item android:id="@+id/attendece"
+           android:title="attendence"
+
+           android:icon="@drawable/ic_calendar_with_check_mark_1"/>
+
+
+    <item android:id="@+id/profile"
+        android:title="Profile"
+
+        android:icon="@drawable/ic_user_3"/>
+
+    <item android:id="@+id/leaves"
+        android:title="Leaves"
+
+        android:icon="@drawable/ic_calendar__2__1"/>
+
+    <item android:id="@+id/logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_exit_1"/>
+
+</menu>

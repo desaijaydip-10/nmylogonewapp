@@ -16,8 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Radio">
-        <activity android:name=".Activity.ProfileActivity"></activity>
-        <activity android:name=".Activity.UserDataActivity" />
+        <activity android:name=".EmployeEditProfileActivity"></activity>
+        <activity android:name=".Activity.ListTimeActivity" android:theme="@style/DemoTheme" />
+        <activity android:name=".Activity.CheckTimeActivity"  android:theme="@style/DemoTheme" />
+        <activity android:name=".Activity.EmployessActivity"  android:theme="@style/DemoTheme"/>
+        <activity
+            android:name=".Activity.InfoHrActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.UserAttendenceActivity"
+            android:theme="@style/DemoTheme" />
+        <activity android:name=".Activity.ProfileActivity" android:theme="@style/DemoTheme" />
+        <activity android:name=".Activity.UserDataActivity"  android:theme="@style/DemoTheme"/>
         <activity android:name=".Activity.SplashActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

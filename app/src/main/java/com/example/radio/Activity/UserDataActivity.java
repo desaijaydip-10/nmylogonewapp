@@ -55,6 +55,7 @@ public class UserDataActivity extends AppCompatActivity {
                               nm= snapshot.child(firebaseAuth.getCurrentUser().getUid()).child("checked_status").getValue(String.class);
 
                               if(nm.equals("0")){
+
                                   textView.setText("Pending !!");
 
                               }
@@ -67,13 +68,6 @@ public class UserDataActivity extends AppCompatActivity {
                               }
 
                     }
-
-
-
-
-
-
-
 
 
             @Override

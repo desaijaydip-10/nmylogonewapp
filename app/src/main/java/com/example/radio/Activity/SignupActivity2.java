@@ -76,10 +76,7 @@ public class SignupActivity2 extends AppCompatActivity implements MultiplePermis
     AlertDialog dialog5;
     String uid = null;
 
-
     String ischecked = "0";
-
-
     CircleImageView profile_img;
 
     Calendar myCalendar;

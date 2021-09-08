@@ -130,12 +130,12 @@ public class LoginActivity extends AppCompatActivity {
 
                                                 if (em.equals("HR"))
                                                 {
-                                                    startActivity(new Intent(LoginActivity.this, DashboradActivity.class));
+                                                    startActivity(new Intent(LoginActivity.this,InfoHrActivity .class));
                                                     snapshot.getRef().child("userlogin").setValue("1");
 
                                                 } else {
 
-                                                    startActivity(new Intent(LoginActivity.this, UserDataActivity.class));
+                                                    startActivity(new Intent(LoginActivity.this, UserAttendenceActivity.class));
                                                     snapshot.getRef().child("userlogin").setValue("1");
                                                 }
                                             }

@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.radio.Adapter.DashbordAdapter;
+import com.example.radio.Fragmenent.EmployeInfoFragment;
 import com.example.radio.Model.AllData;
 import com.example.radio.Model.CheckModel;
 import com.example.radio.R;
@@ -63,12 +64,7 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("user");
         recyclerView = findViewById(R.id.recyclerview1);
-        toolbar = findViewById(R.id.toolbar1);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("HR Login");
 
-
-        // setUpdateValue();
 
 
         if (Build.VERSION.SDK_INT >= 21) {
@@ -79,6 +75,15 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
             window.setStatusBarColor(this.getResources().getColor(R.color.statuscolor));
         }
 
+
+        dashboradBinding.backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                  onBackPressed();
+            }
+        });
+
         databaseReference.addValueEventListener(new ValueEventListener() {
 
 
@@ -86,7 +91,6 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 arrayList.clear();
-
 
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
@@ -98,7 +102,9 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
                     if (selected.equals("Employee")  &&  check== true) {
 
                         arrayList.add(allData);
+
                         recyclerView.setLayoutManager(new LinearLayoutManager(DashboradActivity.this));
+
                         dashbordAdapter = new DashbordAdapter(DashboradActivity.this, arrayList, value, new UserStatusIntetFace() {
                             @Override
                             public void userStatusInterface(String statuschecked, String postion) {
@@ -114,9 +120,18 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
 
-
                                     }
                                 });
+
+                            }
+
+                            @Override
+                            public void showAllDataInterface(AllData allData) {
+
+                               // startActivity(new Intent());
+
+//                                Intent intent = new Intent(DashboradActivity.this,ProfileActivity.class);
+//                                startActivity(intent);
 
                             }
                         });
@@ -141,41 +156,49 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
         });
 
 
-        dashboradBinding.loggout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                FirebaseUser user = auth.getCurrentUser();
-                if (user != null) {
-
-                    databaseReference1 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid());
-                    databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                            //   String userlogin2 = snapshot.child("userlogin").getValue(String.class);
-                            snapshot.getRef().child("userlogin").setValue("0");
-                            auth.signOut();
 
 
-                            Toast.makeText(DashboradActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(DashboradActivity.this, LoginActivity.class));
 
 
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
 
 
-                        }
-                    });
 
-
-                }
-
-            }
-        });
+//        dashboradBinding.loggout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                FirebaseUser user = auth.getCurrentUser();
+//                if (user != null) {
+//
+//                    databaseReference1 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid());
+//                    databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                            //   String userlogin2 = snapshot.child("userlogin").getValue(String.class);
+//                            snapshot.getRef().child("userlogin").setValue("0");
+//                            auth.signOut();
+//
+//
+//
+//                            Toast.makeText(DashboradActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
+//                            startActivity(new Intent(DashboradActivity.this, LoginActivity.class));
+//
+//
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError error) {
+//
+//
+//                        }
+//                    });
+//
+//
+//                }
+//
+//            }
+//        });
 
     }
 
@@ -215,7 +238,7 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finishAffinity();
+        finish();
     }
 //
 //    @Override

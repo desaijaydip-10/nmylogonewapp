@@ -1,6 +1,9 @@
 package com.example.radio.Model;
 
-public class AllData {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class AllData  implements Parcelable {
 
 
     //String  address,addharcard,bloog_grp,company_name,user_name,user_phonenumber,birthdate,designation,joindata,password,selected,user_email;
@@ -58,6 +61,36 @@ public class AllData {
     }
 
 
+    protected AllData(Parcel in) {
+        mName = in.readString();
+        nEmail = in.readString();
+        mPhoneNumer = in.readString();
+        mpassword = in.readString();
+        mdesignation = in.readString();
+        mjointate = in.readString();
+        mbirthdate = in.readString();
+        mAddress = in.readString();
+        mAdharcar = in.readString();
+        mBloodgrp = in.readString();
+        mCompanyemail = in.readString();
+        mselected = in.readString();
+        img_url = in.readString();
+        userid = in.readString();
+        checked_status = in.readString();
+        verifyCheck = in.readByte() != 0;
+    }
+
+    public static final Creator<AllData> CREATOR = new Creator<AllData>() {
+        @Override
+        public AllData createFromParcel(Parcel in) {
+            return new AllData(in);
+        }
+
+        @Override
+        public AllData[] newArray(int size) {
+            return new AllData[size];
+        }
+    };
 
     public boolean isVerifyCheck() {
 
@@ -192,6 +225,31 @@ public class AllData {
 
     public void setMselected(String mselected) {
         this.mselected = mselected;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mName);
+        dest.writeString(nEmail);
+        dest.writeString(mPhoneNumer);
+        dest.writeString(mpassword);
+        dest.writeString(mdesignation);
+        dest.writeString(mjointate);
+        dest.writeString(mbirthdate);
+        dest.writeString(mAddress);
+        dest.writeString(mAdharcar);
+        dest.writeString(mBloodgrp);
+        dest.writeString(mCompanyemail);
+        dest.writeString(mselected);
+        dest.writeString(img_url);
+        dest.writeString(userid);
+        dest.writeString(checked_status);
+        dest.writeByte((byte) (verifyCheck ? 1 : 0));
     }
 }
 
