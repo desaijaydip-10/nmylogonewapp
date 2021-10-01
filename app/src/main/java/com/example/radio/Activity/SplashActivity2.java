@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.radio.Model.AllData;
 import com.example.radio.R;
@@ -25,6 +26,7 @@ public class SplashActivity2 extends AppCompatActivity {
 
     DatabaseReference databaseReference12;
     String selected;
+    boolean isRead = false;
 
 
     @Override
@@ -37,6 +39,7 @@ public class SplashActivity2 extends AppCompatActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
 
 
+
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -46,33 +49,70 @@ public class SplashActivity2 extends AppCompatActivity {
                 if (currentUser != null && currentUser.isEmailVerified()) {
 
 
+
                     databaseReference12 = FirebaseDatabase.getInstance().getReference().child("user").child(currentUser.getUid());
                     databaseReference12.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
 
-                            String em2 = snapshot.child("mselected").getValue(String.class);
+                                if (!isRead) {
+                                    String em2 = snapshot.child("mselected").getValue(String.class);
+                                    String val = snapshot.child("checkedstatus").getValue(String.class);
 
-                            if (em2.equals("HR")) {
-                                startActivity(new Intent(SplashActivity2.this, InfoHrActivity.class));
 
-                            } else {
-                                startActivity(new Intent(SplashActivity2.this, UserAttendenceActivity.class));
+                                    if (em2.equals("HR")) {
 
+                                        startActivity(new Intent(SplashActivity2.this, InfoHrActivity.class));
+                                        isRead = true;
+                                        finish();
+
+                                    } else {
+
+                                        if (val.equals("0")) {
+
+                                            startActivity(new Intent(SplashActivity2.this, DashActivity.class));
+                                            isRead = true;
+                                            finish();
+                                        }
+
+                                        else
+                                        {
+
+                                            startActivity(new Intent(SplashActivity2.this, UserAttendenceActivity.class));
+                                            isRead = true;
+                                            finish();
+
+                                        }
+                                    }
+                                }
                             }
+
+
+
+
+//                            String em2 = snapshot.child("mselected").getValue(String.class);
+//                            String val = snapshot.child("checkedstatus").getValue(String.class);
+//
+//                            if (em2.equals("HR")) {
+//
+//                                startActivity(new Intent(SplashActivity2.this, InfoHrActivity.class));
+//
+//                            } else {
+//                                startActivity(new Intent(SplashActivity2.this, UserAttendenceActivity.class));
+//
+//                            }
 
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-
                         }
                     });
 
 
                 } else {
-                    startActivity(new Intent(SplashActivity2.this, LoginActivity.class));
-
+                    startActivity(new Intent(SplashActivity2.this, LoginNewActivity.class));
                 }
 
             }

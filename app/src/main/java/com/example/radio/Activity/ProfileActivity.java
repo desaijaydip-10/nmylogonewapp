@@ -32,9 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_profile);
 
-
         AllData allData1 = getIntent().getParcelableExtra("data");
-
 
         circleImageView = findViewById(R.id.imageView2);
 
@@ -47,22 +45,30 @@ public class ProfileActivity extends AppCompatActivity {
         imgvewback = findViewById(R.id.img);
 
         date_jointextview = findViewById(R.id.textView12);
-        birthdate_textview = findViewById(R.id.textView13);
+
+        birthdate_textview = findViewById(R.id.textView14);
+
         addhracar = findViewById(R.id.textView16);
         bloodgp_textview = findViewById(R.id.textView18);
-        company_textview = findViewById(R.id.textView20);
+        company_textview = findViewById(R.id.punchIntextView);
         userTextName = findViewById(R.id.textView23);
         email_txt = findViewById(R.id.textView24);
         mobile_text = findViewById(R.id.textView25);
 
 
-        if (url == null) {
-            circleImageView.setBackgroundResource(R.drawable.ic_user);
 
+        if (url==null) {
+
+            circleImageView.setBackgroundResource(R.drawable.ic_user);
         } else {
 
             Glide.with(this).load(url).into(circleImageView);
         }
+
+
+        String email  =allData1.getnEmail();
+
+        //  Log.e("asd", email);
 
         userTextName.setText(allData1.getmName());
         email_txt.setText(allData1.getnEmail());
@@ -82,6 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
 
 
     }

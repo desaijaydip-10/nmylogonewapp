@@ -9,15 +9,13 @@
         android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CAMERA2" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
-    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-    <!-- <uses-sdk android:minSdkVersion="14"/> -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -29,7 +27,36 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Radio" >
-        <activity android:name="com.example.radio.EmployeEditProfileActivity" />
+        <activity
+            android:name="com.example.radio.Activity.EmployeDetailsActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LeaveStatusEmpActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.SignUpActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LoginNewActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.HrProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.EmpProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.DashActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LeavesActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.ApplyLeaveActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.EmployeEditProfileActivity"
+            android:theme="@style/DemoTheme" />
         <activity
             android:name="com.example.radio.Activity.ListTimeActivity"
             android:theme="@style/DemoTheme" />
@@ -51,17 +78,27 @@
         <activity
             android:name="com.example.radio.Activity.UserDataActivity"
             android:theme="@style/DemoTheme" />
-        <activity android:name="com.example.radio.Activity.SplashActivity2" >
+        <activity
+            android:name="com.example.radio.Activity.SplashActivity2"
+            android:theme="@style/DemoTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.radio.Activity.SignupActivity2" />
-        <activity android:name="com.example.radio.Activity.LoginActivity" />
-        <activity android:name="com.example.radio.Activity.DashboradActivity" />
-        <activity android:name="com.example.radio.MainActivity" />
+        <activity
+            android:name="com.example.radio.Activity.SignupActivity2"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LoginActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.DashboradActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.MainActivity"
+            android:theme="@style/DemoTheme" />
         <activity
             android:name="com.karumi.dexter.DexterActivity"
             android:theme="@style/Dexter.Internal.Theme.Transparent" />

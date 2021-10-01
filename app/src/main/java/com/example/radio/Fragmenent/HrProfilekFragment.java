@@ -85,7 +85,7 @@ public class HrProfilekFragment extends Fragment {
                 if (em.equals("Employee")) {
 
                     allData = snapshot.getValue(AllData.class);
-                    String url = allData.getImg_url();
+                    String url = allData.getImgUrl();
                     if (url == null) {
 
 

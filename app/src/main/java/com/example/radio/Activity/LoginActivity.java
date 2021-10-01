@@ -35,19 +35,24 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
 
 
-    ActivityLoginBinding activityLoginBinding;
+    ActivityLoginBinding binding;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     FirebaseAuth auth;
     private DatabaseReference databaseReference12;
     ArrayList<AllData> arrayList;
     private int device= 0;
+    boolean isReady = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityLoginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(activityLoginBinding.getRoot());
+
+
+//
+
+        setContentView(binding.getRoot());
         auth = FirebaseAuth.getInstance();
+
 
         arrayList = new ArrayList<>();
 
@@ -72,24 +77,24 @@ public class LoginActivity extends AppCompatActivity {
 //        });
 
 
-        activityLoginBinding.loginButton.setOnClickListener(new View.OnClickListener() {
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (activityLoginBinding.emailtextinputLayout.getEditText().getText().toString().isEmpty()) {
+                if (binding.emailtextinputLayout.getEditText().getText().toString().isEmpty()) {
 
-                    activityLoginBinding.EditTextName11.setError("Enter Valid Email");
-                    activityLoginBinding.EditTextName11.requestFocus();
+                    binding.EditTextName11.setError("Enter Valid Email");
+                    binding.EditTextName11.requestFocus();
 
-                } else if (!activityLoginBinding.emailtextinputLayout.getEditText().getText().toString().matches(emailPattern)) {
+                } else if (!binding.emailtextinputLayout.getEditText().getText().toString().matches(emailPattern)) {
 
-                    activityLoginBinding.EditTextName11.setError("Please Enter Valid Email");
-                    activityLoginBinding.EditTextName11.requestFocus();
+                    binding.EditTextName11.setError("Please Enter Valid Email");
+                    binding.EditTextName11.requestFocus();
 
-                } else if (activityLoginBinding.textinputLayoutpassword.getEditText().getText().toString().isEmpty()) {
+                } else if (binding.textinputLayoutpassword.getEditText().getText().toString().isEmpty()) {
 
-                    activityLoginBinding.passwordtextEditText.setError("enter password");
-                    activityLoginBinding.passwordtextEditText.requestFocus();
+                    binding.passwordtextEditText.setError("enter password");
+                    binding.passwordtextEditText.requestFocus();
 
                 } else {
 
@@ -104,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                     dialoglog.setView(view2);
                     dialoglog.show();
 
-                    auth.signInWithEmailAndPassword(activityLoginBinding.emailtextinputLayout.getEditText().getText().toString(), activityLoginBinding.textinputLayoutpassword.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.signInWithEmailAndPassword(binding.emailtextinputLayout.getEditText().getText().toString(), binding.textinputLayoutpassword.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -122,29 +127,66 @@ public class LoginActivity extends AppCompatActivity {
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                                             String em = snapshot.child("mselected").getValue(String.class);
+                                            String sd = snapshot.child("checkedstatus").getValue(String.class);
                                             String userlogin = snapshot.child("userlogin").getValue(String.class);
                                             snapshot.getRef().child("verifyCheck").setValue(true);
 
 
-                                            if(userlogin.equals("0")){
+                                            if (userlogin.equals("0")) {
 
-                                                if (em.equals("HR"))
-                                                {
-                                                    startActivity(new Intent(LoginActivity.this,InfoHrActivity .class));
-                                                    snapshot.getRef().child("userlogin").setValue("1");
+                                                if (!isReady) {
 
-                                                } else {
+                                                    if (em.equals("HR")) {
 
-                                                    startActivity(new Intent(LoginActivity.this, UserAttendenceActivity.class));
-                                                    snapshot.getRef().child("userlogin").setValue("1");
+                                                        startActivity(new Intent(LoginActivity.this, InfoHrActivity.class));
+                                                        snapshot.getRef().child("userlogin").setValue("1");
+
+                                                        isReady = true;
+
+                                                    } else {
+
+                                                        if (sd.equals("0")) {
+
+                                                            startActivity(new Intent(LoginActivity.this, DashActivity.class));
+                                                            snapshot.getRef().child("userlogin").setValue("1");
+                                                            isReady = true;
+
+                                                        } else if (sd.equals("1")) {
+                                                            startActivity(new Intent(LoginActivity.this, SplashActivity2.class));
+                                                            snapshot.getRef().child("userlogin").setValue("1");
+                                                            isReady = true;
+                                                        }
+                                                    }
                                                 }
-                                            }
-
-
-                                            else {
-
+                                            } else {
                                                 Toast.makeText(LoginActivity.this, "User already logging", Toast.LENGTH_SHORT).show();
                                             }
+
+
+//                                            String em = snapshot.child("mselected").getValue(String.class);
+//                                            String userlogin = snapshot.child("userlogin").getValue(String.class);
+//                                            snapshot.getRef().child("verifyCheck").setValue(true);
+//
+//
+//
+//
+//                                            if(userlogin.equals("0")){
+//
+//                                                if (em.equals("HR"))
+//                                                {
+//                                                    startActivity(new Intent(LoginActivity.this,InfoHrActivity .class));
+//                                                    snapshot.getRef().child("userlogin").setValue("1");
+//
+//                                                } else {
+//
+//                                                    startActivity(new Intent(LoginActivity.this, UserAttendenceActivity.class));
+//                                                    snapshot.getRef().child("userlogin").setValue("1");
+//                                                }
+//                                            }
+//
+//                                            else {
+//                                                Toast.makeText(LoginActivity.this, "User already logging", Toast.LENGTH_SHORT).show();
+//                                            }
 
 
 
@@ -176,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        activityLoginBinding.logintextview11.setOnClickListener(new View.OnClickListener() {
+        binding.logintextview11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -184,7 +226,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-        activityLoginBinding.textView6.setOnClickListener(new View.OnClickListener() {
+        binding.textView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

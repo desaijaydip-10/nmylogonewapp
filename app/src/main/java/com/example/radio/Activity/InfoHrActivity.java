@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -99,8 +98,8 @@ public class InfoHrActivity extends AppCompatActivity {
 
                     AllData allData = snapshot.getValue(AllData.class);
 
-                       if(allData.getImg_url() !=null){
-                           Glide.with(InfoHrActivity.this).load(allData.getImg_url()).into(profile_img);
+                       if(allData.getImgUrl() !=null){
+                           Glide.with(InfoHrActivity.this).load(allData.getImgUrl()).into(profile_img);
                        }
 
                        else {
@@ -161,8 +160,8 @@ public class InfoHrActivity extends AppCompatActivity {
                   }
                   else  if(item.getItemId()== R.id.profile_) {
 
-                      getSupportFragmentManager().beginTransaction().replace(R.id.container, new EmployeProfileFragment()).commit();
-                      textView1.setText("public");
+                      startActivity(new Intent(InfoHrActivity.this, HrProfileActivity.class));
+
                       imageView_editview.setVisibility(View.VISIBLE);
                       drawerLayout.closeDrawers();
 
@@ -263,7 +262,7 @@ public class InfoHrActivity extends AppCompatActivity {
 
 
                     Toast.makeText(InfoHrActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(InfoHrActivity.this, LoginActivity.class));
+                    startActivity(new Intent(InfoHrActivity.this, LoginNewActivity.class));
                 }
 
                 @Override

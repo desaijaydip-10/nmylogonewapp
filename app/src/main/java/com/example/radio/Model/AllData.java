@@ -21,9 +21,9 @@ public class AllData  implements Parcelable {
     String mBloodgrp;
     String mCompanyemail;
     String mselected;
-    String img_url;
+    String imgUrl;
     String userid;
-    String checked_status;
+    String checkedStatus;
 
 
 
@@ -48,9 +48,9 @@ public class AllData  implements Parcelable {
         this.mBloodgrp = mBloodgrp;
         this.mCompanyemail = mCompanyemail;
         this.mselected = mselected;
-        this.img_url = img_url;
+        this.imgUrl = img_url;
         this.userid = img_url;
-        this.checked_status = checked_status;
+        this.checkedStatus = checked_status;
         this.verifyCheck = verifyCheck;
 
     }
@@ -74,9 +74,9 @@ public class AllData  implements Parcelable {
         mBloodgrp = in.readString();
         mCompanyemail = in.readString();
         mselected = in.readString();
-        img_url = in.readString();
+        imgUrl = in.readString();
         userid = in.readString();
-        checked_status = in.readString();
+        checkedStatus = in.readString();
         verifyCheck = in.readByte() != 0;
     }
 
@@ -102,12 +102,12 @@ public class AllData  implements Parcelable {
     }
 
 
-    public String getChecked_status() {
-        return checked_status;
+    public String getCheckedStatus() {
+        return checkedStatus;
     }
 
-    public void setChecked_status(String checked_status) {
-        this.checked_status = checked_status;
+    public void setCheckedStatus(String checkedStatus) {
+        this.checkedStatus = checkedStatus;
     }
 
 
@@ -120,12 +120,12 @@ public class AllData  implements Parcelable {
         this.userid = userid;
     }
 
-    public String getImg_url() {
-        return img_url;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImg_url(String img_url) {
-        this.img_url = img_url;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getmName() {
@@ -246,9 +246,9 @@ public class AllData  implements Parcelable {
         dest.writeString(mBloodgrp);
         dest.writeString(mCompanyemail);
         dest.writeString(mselected);
-        dest.writeString(img_url);
+        dest.writeString(imgUrl);
         dest.writeString(userid);
-        dest.writeString(checked_status);
+        dest.writeString(checkedStatus);
         dest.writeByte((byte) (verifyCheck ? 1 : 0));
     }
 }

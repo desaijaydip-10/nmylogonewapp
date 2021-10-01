@@ -6,6 +6,9 @@
     <dimen name="marginleft">30dp</dimen>
     <dimen name="textviewright">30dp</dimen>
     <dimen name="paddingright">20sp</dimen>
-    <dimen name="textoksize">20sp</dimen>
+
     <dimen name="textsize">18sp</dimen>
+    <dimen name="textoksize">20sp</dimen>
+
+    <dimen name="leavetextsieze">16dp</dimen>
 </resources>

@@ -2,7 +2,6 @@ package com.example.radio.Fragmenent;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -25,6 +24,7 @@ import com.example.radio.Model.TimeDateModel;
 import com.example.radio.R;
 import com.example.radio.databinding.FragmentAttendenceBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -33,42 +33,42 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 public class AttendenceFragment extends Fragment {
 
 
-    TextView datetxt, currenttime, endtime;
-    TextView button_In, button_Out;
-    Button button_no, button_yes;
-    boolean ischecked = false;
-    AlertDialog alertDialog;
-    String currentTime2, currentTime1;
-    private Date date1;
-    private Date date2;
-    TextClock textClock;
+    FragmentAttendenceBinding binding;
+
+
+    private String format_time;
 
     FirebaseAuth auth;
-    DatabaseReference databaseReference;
-    String  time_start;
+    boolean ischeckedvalued = false;
 
 
+    Button no_button, yes_button;
+    AlertDialog alertDialog;
+    String checkvalue = "0";
 
-    FragmentAttendenceBinding binding;
-            
+    String start_time, end_time;
 
+    DatabaseReference databaseReference3;
+//    boolean punchIn = false, punchOut = false;
 
-    String currrent_time, endtime_out;
-     String format_time;
-     String start_time;
-     String format_time2;
-     String end_time;
-    private DatabaseReference databaseReference3;
-     Button no_button,yes_button;
+    String current_date;
+    String totaltime;
+
+    Date d;
+    DatabaseReference ref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,360 +82,316 @@ public class AttendenceFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentAttendenceBinding.inflate(inflater, container, false);
-
-
-
         auth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid()).child("checktime");
+        Date c = Calendar.getInstance().getTime();
+        java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("dd MMM, yyyy", Locale.getDefault());
+        String formattedDate = df.format(c);
 
-        binding.button2.setEnabled(false);
-        binding.button2.setClickable(false);
+        String dates= "23 Sep, 2021";
 
 
+        binding.textView9.setText(formattedDate);
+        current_date = binding.textView9.getText().toString();
+        binding.textView13.setFormat12Hour("hh:mm:ss a");
+
+
+        DatabaseReference databaseReference4 = FirebaseDatabase.getInstance().getReference().child("checktime");
+
+        databaseReference4.child(auth.getCurrentUser().getUid()).child(current_date).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                String startime = snapshot.child("starttime").getValue(String.class);
+                String endtimes = snapshot.child("endtime").getValue(String.class);
+
+
+
+
+                if (startime != null) {
+
+                    binding.textView21.setBackgroundResource(R.drawable.bg_button);
+                    binding.punchIntextView.setBackgroundResource(R.drawable.bg_button_not_selector);
+
+                    binding.punchIntextView.setEnabled(false);
+                    binding.textView21.setEnabled(true);
+
+                } else {
+
+
+
+                    binding.textView21.setEnabled(false);
+                    binding.textView21.setBackgroundResource(R.drawable.bg_button_not_selector);
+                    binding.punchIntextView.setBackgroundResource(R.drawable.bg_button);
+                }
+
+                if (endtimes != null) {
+
+                    if(current_date.equals(snapshot.child("date").getValue(String.class))){
+
+                        binding.textView21.setBackgroundResource(R.drawable.bg_button_not_selector);
+                        binding.punchIntextView.setBackgroundResource(R.drawable.bg_button);
+
+                        binding.punchIntextView.setVisibility(View.GONE);
+                        binding.textView21.setVisibility(View.GONE);
+
+
+                        binding.textView26.setVisibility(View.VISIBLE);
+                        binding.textView26.setText("punch out Today");
+                    }
+
+                    else {
+
+                        binding.textView26.setVisibility(View.GONE);
+                        binding.textView21.setBackgroundResource(R.drawable.bg_button_not_selector);
+                        binding.punchIntextView.setBackgroundResource(R.drawable.bg_button);
+                    }
+
+                } else {
+
+
+                }
+
+//                if (snapshot.child("starttime").exists()){
+//
+//                    binding.textView21.setBackgroundResource(R.drawable.bg_button);
+//                    binding.punchIntextView.setBackgroundResource(R.drawable.bg_button_not_selector);
+//
+//                    binding.punchIntextView.setEnabled(false);
+//                    binding.textView21.setEnabled(true);
+//
+//                }else
+//                    {
+//
+//                    if(current_date.equals(snapshot.child("date").getValue(String.class))){
+//                        binding.textView21.setBackgroundResource(R.drawable.bg_button_not_selector);
+//                        binding.punchIntextView.setBackgroundResource(R.drawable.bg_button);
+//
+//                        binding.punchIntextView.setEnabled(true);
+//                        binding.textView21.setEnabled(false);
+//                    }
+//                    else {
+//
+//
+//                        binding.textView21.setBackgroundResource(R.drawable.bg_button_not_selector);
+//                        binding.punchIntextView.setBackgroundResource(R.drawable.bg_button);
+//
+//                    }
+//
+//
+//
+//                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        DatabaseReference databaseReference6 = FirebaseDatabase.getInstance().getReference().child("checktime");
+        databaseReference6.child(auth.getCurrentUser().getUid()).child(current_date).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                start_time = snapshot.child("starttime").getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        binding.punchIntextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialogePunchIn();
+            }
+        });
+
+
+        binding.textView21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPunchOut();
+            }
+        });
+
+
+        return binding.getRoot();
+    }
+
+
+    private void openPunchOut() {
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         alertDialog = builder.create();
-        View view1 = getLayoutInflater().inflate(R.layout.custom_layout_new, null, false);
+        View view1 = getLayoutInflater().inflate(R.layout.alert_dialoge_layout, null, false);
+
+
+        no_button = view1.findViewById(R.id.button3);
+        yes_button = view1.findViewById(R.id.button4);
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         alertDialog.setView(view1);
-        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
 
-        no_button = view1.findViewById(R.id.no_button);
-        yes_button = view1.findViewById(R.id.yes_button);
 
-        //   binding.textViewTimein.setText(format_time);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid()).child("checktime");
+        no_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
 
-//        if(falage==0){
 
-//            binding.buttonIn.setClickable(true);
-//        }
-//        else {
-//            binding.button2.setClickable(false);
-//        }
-
-        binding.buttonIn.setOnClickListener(new View.OnClickListener() {
+        yes_button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
 
-                binding.button2.setEnabled(false);
-                binding.button2.setClickable(false);
 
-                no_button.setOnClickListener(new View.OnClickListener() {
+                long time = (long) (System.currentTimeMillis());
+                Timestamp tsTemp = new Timestamp(time);
+
+
+                java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("hh:mm a");
+
+                String dateString2 = formatter.format(new Date(time));
+                binding.textViewend.setText(dateString2);
+                String end_time = String.valueOf(time);
+
+
+                databaseReference3 = FirebaseDatabase.getInstance().getReference().child("checktime").child(auth.getCurrentUser().getUid()).child(current_date);
+                databaseReference3.child("endtime").setValue(end_time);
+
+
+                long totalSecs = (time - Long.parseLong(start_time));
+                long seconds = totalSecs / 1000;
+                long minutes = seconds / 60;
+                long hours = minutes / 60;
+
+                totaltime = hours % 24 + ":" + minutes % 60 + ":" + seconds % 60;
+
+                String e = binding.textViewend.getText().toString();
+
+
+                java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("hh:mm a");
+                String endtimes = format.format(new Date(time));
+
+
+                String dateStart = "06:15 pm";
+                String dateStop = endtimes;
+
+
+                Date d1 = null;
+                Date d2 = null;
+                try {
+                    d1 = format.parse(dateStart);
+                    d2 = format.parse(dateStop);
+
+                } catch (ParseException ee) {
+                    ee.printStackTrace();
+                }
+
+
+                long diff = d2.getTime() - d1.getTime();
+
+
+
+
+                long diffMinutes = diff / (60 * 1000) % 60;
+                long diffHours = diff / (60 * 60 * 1000);
+
+
+                String totaldiffrenttimes = diffHours + ":" + diffMinutes;
+
+
+                Log.e("timesdiff", totaldiffrenttimes);
+
+                databaseReference3.child("diffrent").setValue(totaldiffrenttimes);
+                ;
+                binding.textView27.setVisibility(View.VISIBLE);
+                binding.textView26.setVisibility(View.VISIBLE);
+                binding.textView26.setText(totaltime);
+
+
+                binding.textView21.setVisibility(View.GONE);
+                binding.punchIntextView.setVisibility(View.GONE);
+
+                alertDialog.dismiss();
+
+            }
+        });
+
+    }
+
+    private void openDialogePunchIn() {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        alertDialog = builder.create();
+        View view1 = getLayoutInflater().inflate(R.layout.alert_dialoge_layout, null, false);
+
+
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        no_button = view1.findViewById(R.id.button3);
+        yes_button = view1.findViewById(R.id.button4);
+
+        alertDialog.setView(view1);
+        alertDialog.show();
+
+
+        no_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+
+        yes_button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+
+                long t = (long) (System.currentTimeMillis());
+
+
+                Timestamp tsTemp = new Timestamp(t);
+
+
+
+                java.text.SimpleDateFormat formatter = new SimpleDateFormat("hh:mm a");
+
+
+                String dateString = formatter.format(new Date(t));
+
+                binding.textView15.setText(dateString);
+
+
+                TimeSetModel timeSetModel = new TimeSetModel(String.valueOf(t), null, "", binding.textView9.getText().toString());
+
+                DatabaseReference a = FirebaseDatabase.getInstance().getReference().child("checktime");
+
+                a.child(auth.getCurrentUser().getUid()).child(current_date).setValue(timeSetModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onClick(View v) {
-                        alertDialog.dismiss();
+                    public void onSuccess(Void aVoid) {
+
                     }
                 });
-                yes_button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        binding.button2.setEnabled(true);
-                        binding.button2.setClickable(true);
-
-                        binding.buttonIn.setEnabled(false);
-                        binding.buttonIn.setClickable(false);
-
-                        format_time = new android.icu.text.SimpleDateFormat("hh:mm aa", Locale.getDefault()).format(new Date());
-
-                        binding.textViewTimein.setText(format_time);
-
-                        start_time = binding.textViewTimein.getText().toString();
-
-                        TimeSetModel timeSetModel = new TimeSetModel(start_time, "", "", "");
-
-                        databaseReference.child(auth.getCurrentUser().getUid()).setValue(timeSetModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-
-                                if (task.isSuccessful()) {
-
-                                    Toast.makeText(getContext(), "succesfully add", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
 
 
-                        alertDialog.dismiss();
-                        // Log.e("timevalue", binding.textViewTimein.getText().toString());
-                    }
-                });
-
-                alertDialog.show();
-
-                // binding.textViewTimein.setText(format_time);
+                alertDialog.dismiss();
 
 
             }
         });
 
-        binding.button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-                no_button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        alertDialog.dismiss();
-                    }
-                });
-                yes_button.setOnClickListener(new View.OnClickListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.O)
-                    @Override
-                    public void onClick(View v) {
-
-
-                        format_time2 = new SimpleDateFormat("hh:mm aa", Locale.getDefault()).format(new Date());
-                        binding.textView2.setText(format_time2);
-
-                        binding.buttonIn.setEnabled(true);
-                        binding.buttonIn.setClickable(true);
-
-                        binding.button2.setEnabled(false);
-                        binding.button2.setClickable(false);
-
-
-                        //   String st_time = currenttime.getText().toString();
-
-                        end_time = binding.textView2.getText().toString();
-
-                        DatabaseReference databaseReference6 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid()).child("checktime");
-                        databaseReference6.child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                                time_start= snapshot.child("starttime").getValue(String.class);
-
-
-                                Log.e("start_time", time_start);
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
-
-
-
-                        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a", Locale.ENGLISH);
-
-                        LocalTime start = LocalTime.parse(time_start, timeFormatter);
-                        LocalTime end = LocalTime.parse(end_time, timeFormatter);
-
-                        Duration diff = Duration.between(start, end);
-
-                        long hours = diff.toHours();
-                        long minutes = diff.minusHours(hours).toMinutes();
-                        String totalTimeString = String.format("%02d:%02d", hours, minutes);
-
-
-                        LocalTime fix_time = LocalTime.parse("06:15 PM", timeFormatter);
-                        Duration diff2 = Duration.between(fix_time, end);
-
-                        long hours2 = diff2.toHours();
-                        long minutes2 = diff2.minusHours(hours2).toMinutes();
-                        String totalTimeString2 = String.format("%02d:%02d", hours2, minutes2);
-                        //   Log.e("diffrent", totalTimeString2);
-
-
-
-                        databaseReference3 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid()).child("checktime");
-                        databaseReference3.child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                                snapshot.getRef().child("endtime").setValue(end_time);
-                                snapshot.getRef().child("diffrent").setValue(totalTimeString);
-                                snapshot.getRef().child("diffrent2").setValue(totalTimeString2);
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
-
-
-
-//                        databaseReference.child("checktime").addListenerForSingleValueEvent(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//
-//
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError error) {
-//
-//                            }
-//                        });
-                        alertDialog.dismiss();
-
-                    }
-                });
-
-                alertDialog.show();
-
-            }
-        });
-
-
-
-
-//        datetxt = view.findViewById(R.id.textView9);
-//        currenttime = view.findViewById(R.id.textView15);
-//        textClock = view.findViewById(R.id.textView13);
-//
-//        endtime = view.findViewById(R.id.textView_end);
-//
-//        button_In = view.findViewById(R.id.textView20);
-//        button_Out = view.findViewById(R.id.textView21);
-//
-//
-//        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-//
-//        datetxt.setText(currentDate);
-//
-//
-//        textClock.setFormat12Hour(null);
-//        textClock.setFormat24Hour("hh:mm:ss a");
-//
-//
-//
-//
-//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//        alertDialog = builder.create();
-//        View view1 = getLayoutInflater().inflate(R.layout.custom_layout_new, null, false);
-//
-//        button_no = view1.findViewById(R.id.no_button);
-//        button_yes = view1.findViewById(R.id.yes_button);
-//
-//        alertDialog.setView(view1);
-//
-//        button_In.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                button_no.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        alertDialog.dismiss();
-//                    }
-//                });
-//                button_yes.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        format_time = new SimpleDateFormat("hh:mm aa", Locale.getDefault()).format(new Date());
-//
-//                        currenttime.setText(format_time);
-//
-//                        start_time = currenttime.getText().toString();
-//
-//                        String current_date= datetxt.getText().toString();
-//
-//                        TimeSetModel timeSetModel = new TimeSetModel(start_time, "", "",current_date );
-//
-//                        databaseReference.child(auth.getCurrentUser().getUid()).setValue(timeSetModel).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<Void> task) {
-//
-//                                if (task.isSuccessful()) {
-//
-//
-//                                  //  Toast.makeText(getContext(), "succesfully add", Toast.LENGTH_SHORT).show();
-//                                }
-//                            }
-//                        });
-//
-//
-//
-//                        alertDialog.dismiss();
-//                    }
-//                });
-//
-//                alertDialog.show();
-//            }
-//        });
-//
-//
-//        button_Out.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                button_no.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        alertDialog.dismiss();
-//                    }
-//                });
-//                button_yes.setOnClickListener(new View.OnClickListener() {
-//                    @RequiresApi(api = Build.VERSION_CODES.O)
-//                    @Override
-//                    public void onClick(View v) {
-//
-//                        format_time2 = new SimpleDateFormat("hh:mm aa", Locale.getDefault()).format(new Date());
-//                        endtime.setText(format_time2);
-//                        end_time = endtime.getText().toString();
-//
-//                        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a", Locale.ENGLISH);
-//
-//                        LocalTime start = LocalTime.parse(start_time, timeFormatter);
-//                        LocalTime end = LocalTime.parse(end_time, timeFormatter);
-//
-//                        Duration diff = Duration.between(start, end);
-//
-//                        long hours = diff.toHours();
-//                        long minutes = diff.minusHours(hours).toMinutes();
-//                        String totalTimeString = String.format("%02d:%02d", hours, minutes);
-//
-//                        LocalTime fix_time = LocalTime.parse("06:15 PM", timeFormatter);
-//                        Duration diff2 = Duration.between(fix_time, end);
-//
-//                        long hours2 = diff2.toHours();
-//                        long minutes2 = diff2.minusHours(hours2).toMinutes();
-//                        String totalTimeString2 = String.format("%02d:%02d", hours2, minutes2);
-//
-//
-//                        databaseReference3 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid()).child("checktime");
-//                        databaseReference3.child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                                snapshot.getRef().child("endtime").setValue(end_time);
-//                                snapshot.getRef().child("diffrent").setValue(totalTimeString);
-//                                snapshot.getRef().child("diffrent2").setValue(totalTimeString2);
-//
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError error) {
-//
-//                            }
-//                        });
-//
-//
-//
-//
-//
-//                        alertDialog.dismiss();
-//                    }
-//                });
-//
-//                alertDialog.show();
-//            }
-//        });
-
-        return binding.getRoot();
     }
 }

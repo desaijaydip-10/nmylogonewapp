@@ -2,15 +2,12 @@ package com.example.radio.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,30 +20,12 @@ import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.radio.Activity.DashboradActivity;
 import com.example.radio.Activity.ProfileActivity;
 import com.example.radio.Model.AllData;
-import com.example.radio.Model.CheckModel;
 import com.example.radio.R;
-import com.example.radio.UserInterface;
 import com.example.radio.UserStatusIntetFace;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Logger;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.CustomViewHolder> {
 
@@ -80,7 +59,6 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.demo_layout, parent, false);
-        view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
         return new CustomViewHolder(view);
     }
 
@@ -90,24 +68,8 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
 
         AllData allData= arrayList.get(position);
 
-        if (arrayList.get(position).getChecked_status().equals("1")) {
 
-            holder.accepttextView.setText(null);
-            holder.checkImg.setVisibility(View.VISIBLE);
-            holder.checkImg.setImageResource(R.drawable.ic_baseline_check_24);
-            holder.img.setVisibility(View.VISIBLE);
-            holder.img.setImageResource(R.drawable.ic_right);
-
-            binderHelper.lockSwipe(arrayList.get(position).getUserid());
-
-
-        }
-        else if (arrayList.get(position).getChecked_status().equals("2")) {
-
-            holder.img.setVisibility(View.VISIBLE);
-            holder.img.setImageResource(R.drawable.ic_cancel_svgrepo_com);
-
-        } else {
+        if(arrayList.get(position).getCheckedStatus().equals("0")) {
 
             binderHelper.closeLayout(String.valueOf(holder.swipeLayout));
             holder.img.setVisibility(View.VISIBLE);
@@ -115,17 +77,35 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
 
         }
 
-        if (arrayList.get(position).getImg_url() == null) {
+        if (arrayList.get(position).getCheckedStatus().equals("1")) {
+
+
+
+            holder.accepttextView.setText(null);
+            holder.checkImg.setVisibility(View.VISIBLE);
+            holder.checkImg.setImageResource(R.drawable.ic_baseline_check_24);
+            holder.img.setVisibility(View.VISIBLE);
+            holder.img.setImageResource(R.drawable.ic_right);
+
+
+            binderHelper.lockSwipe(arrayList.get(position).getUserid());
+
+        }
+        else if (arrayList.get(position).getCheckedStatus().equals("2")) {
+
+
+            holder.img.setVisibility(View.VISIBLE);
+            holder.img.setImageResource(R.drawable.ic_cancel_svgrepo_com);
+
+        }
+
+        if (arrayList.get(position).getImgUrl() == null) {
 
             holder.pf_img.setBackgroundResource(R.drawable.ic_user);
 
         }
 
-        holder.textView.setText(arrayList.get(position).getmName());
-        Glide.with(context).load(arrayList.get(position).getImg_url()).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.pf_img);
 
-        binderHelper.bind(holder.swipeLayout, arrayList.get(position).getmName());
-        holder.bind(arrayList.get(position).getmName());
 
         holder.swipeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,6 +135,11 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
                 holder.swipeLayout.setLockDrag(true);
 
                 binderHelper.lockSwipe(arrayList.get(position).getUserid());
+
+
+
+                holder.textView.setText(arrayList.get(position).getmName());
+                Glide.with(context).load(arrayList.get(position).getImgUrl()).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.pf_img);
 
 
 
@@ -194,6 +179,10 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
 
             }
         });
+
+
+        binderHelper.bind(holder.swipeLayout, arrayList.get(position).getmName());
+        holder.bind(arrayList.get(position).getmName());
 
 
         holder.textView.setOnClickListener(new View.OnClickListener() {

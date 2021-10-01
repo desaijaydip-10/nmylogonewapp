@@ -2,11 +2,9 @@ package com.example.radio.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.opengl.EGLImage;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +15,6 @@ import com.example.radio.Activity.ProfileActivity;
 import com.example.radio.Interface.ShowAllDataInterfsce;
 import com.example.radio.Model.AllData;
 import com.example.radio.R;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -51,7 +48,7 @@ public class EmployessAdapter  extends  RecyclerView.Adapter<EmployessAdapter.Cu
     public void onBindViewHolder(@NonNull Custom_emp holder, int position) {
         AllData allData= arrayList.get(position);
 
-        Glide.with(context).load(arrayList.get(position).getImg_url()).into(holder.circleImageView);
+        Glide.with(context).load(arrayList.get(position).getImgUrl()).into(holder.circleImageView);
         holder.textView_name.setText(arrayList.get(position).getmName());
 
 

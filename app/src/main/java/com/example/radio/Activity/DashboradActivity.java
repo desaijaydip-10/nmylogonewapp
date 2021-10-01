@@ -46,9 +46,7 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
     Toolbar toolbar;
     String selectef;
     static boolean checked;
-
     String value;
-
     DashbordAdapter dashbordAdapter;
     private DatabaseReference databaseReference1;
 
@@ -66,43 +64,45 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
         recyclerView = findViewById(R.id.recyclerview1);
 
 
-
-        if (Build.VERSION.SDK_INT >= 21) {
-
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.statuscolor));
-        }
+//        if (Build.VERSION.SDK_INT >= 21) {
+//
+//            Window window = this.getWindow();
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            window.setStatusBarColor(this.getResources().getColor(R.color.statuscolor));
+//        }
 
 
         dashboradBinding.backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                  onBackPressed();
+                onBackPressed();
             }
         });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
 
-
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                arrayList.clear();
 
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
                     AllData allData = snapshot1.getValue(AllData.class);
                     String selected = allData.getMselected();
+
+                    Log.e("sfdfdf", selected);
+//                    String status = allData.getCheckedStatus();
+
+
+
                     boolean check = allData.isVerifyCheck();
 
 
-                    if (selected.equals("Employee")  &&  check== true) {
+
+
+                    if (selected.equals("Employee")) {
 
                         arrayList.add(allData);
-
                         recyclerView.setLayoutManager(new LinearLayoutManager(DashboradActivity.this));
 
                         dashbordAdapter = new DashbordAdapter(DashboradActivity.this, arrayList, value, new UserStatusIntetFace() {
@@ -113,8 +113,7 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                                        snapshot.getRef().child("checked_status").setValue(statuschecked);
-
+                                        snapshot.getRef().child("checkedstatus").setValue(statuschecked);
                                     }
 
                                     @Override
@@ -123,12 +122,17 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
                                     }
                                 });
 
+
+                                recyclerView.setAdapter(dashbordAdapter);
+
                             }
+
 
                             @Override
                             public void showAllDataInterface(AllData allData) {
 
-                               // startActivity(new Intent());
+
+                                // startActivity(new Intent());
 
 //                                Intent intent = new Intent(DashboradActivity.this,ProfileActivity.class);
 //                                startActivity(intent);
@@ -136,8 +140,7 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
                             }
                         });
 
-                        recyclerView.setAdapter(dashbordAdapter);
-                        dashbordAdapter.notifyDataSetChanged();
+
                     } else {
 
 
@@ -154,13 +157,6 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
 
             }
         });
-
-
-
-
-
-
-
 
 
 //        dashboradBinding.loggout.setOnClickListener(new View.OnClickListener() {

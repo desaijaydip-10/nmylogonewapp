@@ -32,6 +32,7 @@ import com.example.radio.Adapter.SpinnerAdapterA;
 import com.example.radio.Model.RegisterModel;
 import com.example.radio.R;
 import com.example.radio.UserStatusIntetFace;
+
 import com.example.radio.databinding.ActivitySignup2Binding;
 import com.example.radio.utils.PhoneTextFormatter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -88,8 +89,6 @@ public class SignupActivity2 extends AppCompatActivity implements MultiplePermis
     TextView textView, textview2;
 
     String chechedstatus = "0";
-
-
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
                     "(?=.*[@#$%^&+=])" +     // at least 1 special character
@@ -101,6 +100,10 @@ public class SignupActivity2 extends AppCompatActivity implements MultiplePermis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         activitySignup2Binding = ActivitySignup2Binding.inflate(getLayoutInflater());
         setContentView(activitySignup2Binding.getRoot());
 
@@ -167,7 +170,7 @@ public class SignupActivity2 extends AppCompatActivity implements MultiplePermis
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(SignupActivity2.this, LoginActivity.class));
+                startActivity(new Intent(SignupActivity2.this, LoginNewActivity.class));
             }
         });
 
@@ -593,7 +596,7 @@ public class SignupActivity2 extends AppCompatActivity implements MultiplePermis
                                                        // getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
 
-                                                        startActivity(new Intent(SignupActivity2.this, LoginActivity.class));
+                                                        startActivity(new Intent(SignupActivity2.this, LoginNewActivity.class));
 
                                                         dialog1.dismiss();
                                                     }

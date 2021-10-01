@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "D:\\JD\\myLogoApp\\Demoapp\\myLogoApp\\myradioApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\c1a7bae71a031b2d4ca19e1bf724c760\\jetified-play-services-base-17.1.0\\res\\values-pt-rBR\\values.xml",

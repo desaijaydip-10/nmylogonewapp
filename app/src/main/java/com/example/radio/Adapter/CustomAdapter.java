@@ -9,13 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.radio.Activity.CheckTimeActivity;
 import com.example.radio.Activity.DashboradActivity;
 import com.example.radio.Activity.EmployessActivity;
-import com.example.radio.Fragmenent.RequestEmpFragment;
+import com.example.radio.Activity.LeaveStatusEmpActivity;
 import com.example.radio.R;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
@@ -35,15 +34,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_empinfo_layout, null, true);
-
-        view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
+        View view = LayoutInflater.from(context).inflate(R.layout.custom_empinfo_layout, parent, false);
         return new CustomViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-
 
 
           holder.img_empinfo.setImageResource(img[position]);
@@ -60,11 +56,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                   else  if(position==1){
                       context.startActivity(new Intent(context, EmployessActivity.class));
                   }
-                   else {
 
+                   else if(position==2) {
 
                       context.startActivity(new Intent(context, CheckTimeActivity.class));
+                  }
+                   else {
 
+                      context.startActivity(new Intent(context, LeaveStatusEmpActivity.class));
                   }
 
               }

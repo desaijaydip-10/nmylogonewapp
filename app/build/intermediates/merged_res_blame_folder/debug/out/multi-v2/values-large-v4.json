@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\radio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "D:\\JD\\myLogoApp\\Demoapp\\myLogoApp\\myradioApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\ba80b7e1e9bb46ed9d7c5de07dcbc79d\\material-1.4.0\\res\\values-large-v4\\values-large-v4.xml",

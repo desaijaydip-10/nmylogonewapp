@@ -10,10 +10,7 @@ public class GetAllTimeDataModel {
 
     public GetAllTimeDataModel() {
 
-
     }
-
-
 
     public GetAllTimeDataModel(String starttime, String endtime, String diffrent, String date) {
         this.starttime = starttime;
@@ -21,6 +18,9 @@ public class GetAllTimeDataModel {
         this.diffrent = diffrent;
         this.date = date;
     }
+
+
+
 
     public String getStarttime() {
         return starttime;

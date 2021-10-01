@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.radio"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Radio" >
+        <activity
+            android:name="com.example.radio.Activity.EmployeDetailsActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LeaveStatusEmpActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.SignUpActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LoginNewActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.HrProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.EmpProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.DashActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LeavesActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.ApplyLeaveActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.EmployeEditProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.ListTimeActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.CheckTimeActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.EmployessActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.InfoHrActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.UserAttendenceActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.ProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.UserDataActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.SplashActivity2"
+            android:theme="@style/DemoTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.radio.Activity.SignupActivity2"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.LoginActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.Activity.DashboradActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.example.radio.MainActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name="com.karumi.dexter.DexterActivity"
+            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <activity
+            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="genericidp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="recaptcha" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.example.radio.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

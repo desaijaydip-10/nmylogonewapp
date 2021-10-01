@@ -33,7 +33,7 @@ public class EmployessActivity extends AppCompatActivity {
 
 
     FirebaseAuth auth1;
-  static ArrayList<AllData> arrayList;
+    static ArrayList<AllData> arrayList;
     DatabaseReference databaseReference2;
     RecyclerView recyclerView_emp;
     ImageView back_img;
@@ -62,17 +62,17 @@ public class EmployessActivity extends AppCompatActivity {
                     AllData allData = snapshot1.getValue(AllData.class);
                     String selected = allData.getMselected();
                     boolean check = allData.isVerifyCheck();
+                    String status = allData.getCheckedStatus();
 
 
                     if (selected.equals("Employee") && check == true) {
 
                         arrayList.add(allData);
+
                         recyclerView_emp.setLayoutManager(new LinearLayoutManager(EmployessActivity.this));
-                        EmployessAdapter emp = new EmployessAdapter(EmployessActivity.this, arrayList , new ShowAllDataInterfsce() {
+                        EmployessAdapter emp = new EmployessAdapter(EmployessActivity.this, arrayList, new ShowAllDataInterfsce() {
                             @Override
                             public void showAllDataInterface(AllData allData) {
-
-
 
                             }
                         });

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -61,8 +59,6 @@ public class EmployeProfileFragment extends Fragment {
 
         databaseReference55 = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid());
 
-
-
         circleImageView = view.findViewById(R.id.imageView2);
         editImagview = view.findViewById(R.id.imageView9);
         address_textview = view.findViewById(R.id.textView8);
@@ -93,7 +89,7 @@ public class EmployeProfileFragment extends Fragment {
                 if (em.equals("HR")) {
 
                     allData1 = snapshot.getValue(AllData.class);
-                    String url = allData1.getImg_url();
+                    String url = allData1.getImgUrl();
                     if (url == null) {
 
                         circleImageView.setBackgroundResource(R.drawable.ic_user);

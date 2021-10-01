@@ -19,14 +19,14 @@ public class RegisterModel {
      String selected;
      String userid;
      String imgurl;
-     String checked_status;
+     String checkedStatus;
      String userlogin;
      boolean verifyCheck;
 
 
      public RegisterModel(String userid, String mName, String nEmail,
                           String password, String mPhoneNumer, String mdesignation, String mjointate, String mbirthdate, String mAddress, String mAdharcar, String mBloodgrp, String mCompanyemail,
-                          String img_url, String checked_status,
+                          String img_url, String checkedStatus,
                           String ischecked, boolean verifyCheck) {
           this.mName = mName;
           this.nEmail = nEmail;
@@ -42,7 +42,7 @@ public class RegisterModel {
 
           this.imgurl = img_url;
           this.userid = userid;
-          this.checked_status = checked_status;
+          this.checkedStatus = checkedStatus;
           this.userlogin = ischecked;
           this.verifyCheck = verifyCheck;
 
@@ -67,13 +67,13 @@ public class RegisterModel {
 
 
 
-     public String getChecked_status()
+     public String getCheckedStatus()
      {
-          return checked_status;
+          return checkedStatus;
      }
 
-     public void setChecked_status(String checked_status) {
-          this.checked_status = checked_status;
+     public void setCheckedStatus(String checkedStatus) {
+          this.checkedStatus = checkedStatus;
      }
 
 

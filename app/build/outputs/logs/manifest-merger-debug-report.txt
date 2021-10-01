@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
 MERGED from [androidx.databinding:viewbinding:4.1.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\196fc8175e854bc9ecb304d728caf5a0\jetified-viewbinding-4.1.3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ba80b7e1e9bb46ed9d7c5de07dcbc79d\material-1.4.0\AndroidManifest.xml:17:1-24:12
@@ -20,6 +20,7 @@ MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Admin\.gradle\ca
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\1e17d35ae12a1cbea9d7c429951cc7a6\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [it.xabaras.android:recyclerview-swipedecorator:1.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7d5e1bdac80e0959f39ad74b2d3b0432\jetified-recyclerview-swipedecorator-1.2.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\800ce6a7af9d21bfdfe3fc20cce07f7e\jetified-glide-4.12.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7bbe2fe08f2fdbe9fb38ae680d90bc1c\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\b2eed882d796fb52c9b61c660696c994\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4dec93481cf71d51546012d0824b55a2\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\f0b11f922f87659d9ea9efc9dc13f83b\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:15:1-26:12
@@ -67,25 +68,25 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Admin\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2eee6c787b21a6184204dc5d64f76e55\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\86d0755ff4181c9336d0265657cdada3\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\162ddafcfd1cc9bd67ae0a1945277ee2\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
 	package
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:3:5-32
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:2:1-44:12
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:1-99:12
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:5:5-67
 MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\894f0d528dfe4e9c06b382812e4b3c99\jetified-firebase-auth-21.0.1\AndroidManifest.xml:23:5-67
@@ -93,29 +94,39 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\ca
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7855a02a1335ea1a9ab769267768d0a8\jetified-firebase-database-20.0.1\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7855a02a1335ea1a9ab769267768d0a8\jetified-firebase-database-20.0.1\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:6:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:8:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\894f0d528dfe4e9c06b382812e4b3c99\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\894f0d528dfe4e9c06b382812e4b3c99\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7855a02a1335ea1a9ab769267768d0a8\jetified-firebase-database-20.0.1\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7855a02a1335ea1a9ab769267768d0a8\jetified-firebase-database-20.0.1\AndroidManifest.xml:25:5-79
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:8:22-76
 uses-permission#android.permission.CAMERA
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:6:5-65
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:11:5-65
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:6:22-62
-uses-permission#android.permission.CAMERA2
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:7:5-66
-	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:7:22-63
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:8:5-81
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:8:22-78
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:13:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:9:5-80
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:15:5-80
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:9:22-77
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:15:22-77
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:10:5-71
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:16:5-71
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:10:22-68
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:16:22-68
 application
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:12:5-42:19
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:18:5-97:19
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\ba80b7e1e9bb46ed9d7c5de07dcbc79d\material-1.4.0\AndroidManifest.xml:22:5-20
@@ -134,6 +145,8 @@ MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\t
 MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\1e17d35ae12a1cbea9d7c429951cc7a6\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\800ce6a7af9d21bfdfe3fc20cce07f7e\jetified-glide-4.12.0\AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\800ce6a7af9d21bfdfe3fc20cce07f7e\jetified-glide-4.12.0\AndroidManifest.xml:10:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7bbe2fe08f2fdbe9fb38ae680d90bc1c\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7bbe2fe08f2fdbe9fb38ae680d90bc1c\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4dec93481cf71d51546012d0824b55a2\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4dec93481cf71d51546012d0824b55a2\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\f0b11f922f87659d9ea9efc9dc13f83b\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:24:5-20
@@ -157,97 +170,163 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ad
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.5.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dcc93007e9b0fd67049be7a503ea53f1\core-1.5.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:16:9-54
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:22:9-54
 	android:icon
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:18:9-43
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:24:9-43
+activity#com.example.radio.Activity.EmployeDetailsActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:25:9-27:57
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:27:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:26:13-60
+activity#com.example.radio.Activity.LeaveStatusEmpActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:28:9-30:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:30:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:29:13-60
+activity#com.example.radio.Activity.SignUpActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:31:9-33:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:33:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:32:13-52
+activity#com.example.radio.Activity.LoginNewActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:34:9-36:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:36:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:35:13-54
+activity#com.example.radio.Activity.HrProfileActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:37:9-39:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:39:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:38:13-55
+activity#com.example.radio.Activity.EmpProfileActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:40:9-42:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:42:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:41:13-56
+activity#com.example.radio.Activity.DashActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:43:9-45:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:45:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:44:13-50
+activity#com.example.radio.Activity.LeavesActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:46:9-48:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:48:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:47:13-52
+activity#com.example.radio.Activity.ApplyLeaveActivity
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:49:9-51:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:51:13-45
+	android:name
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:50:13-56
 activity#com.example.radio.EmployeEditProfileActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:19:9-73
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:52:9-54:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:54:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:19:19-61
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:53:13-55
 activity#com.example.radio.Activity.ListTimeActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:20:9-96
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:55:9-57:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:20:61-93
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:57:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:20:19-60
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:56:13-54
 activity#com.example.radio.Activity.CheckTimeActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:21:9-98
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:58:9-60:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:21:63-95
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:60:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:21:19-61
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:59:13-55
 activity#com.example.radio.Activity.EmployessActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:22:9-97
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:61:9-63:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:22:63-95
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:63:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:22:19-61
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:62:13-55
 activity#com.example.radio.Activity.InfoHrActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:23:9-25:48
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:64:9-66:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:25:13-45
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:66:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:24:13-52
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:65:13-52
 activity#com.example.radio.Activity.UserAttendenceActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:26:9-28:48
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:67:9-69:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:28:13-45
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:69:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:27:13-60
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:68:13-60
 activity#com.example.radio.Activity.ProfileActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:29:9-95
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:70:9-72:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:29:60-92
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:72:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:29:19-59
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:71:13-53
 activity#com.example.radio.Activity.UserDataActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:30:9-96
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:73:9-75:48
 	android:theme
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:30:62-94
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:75:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:30:19-60
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:74:13-54
 activity#com.example.radio.Activity.SplashActivity2
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:31:9-37:20
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:76:9-84:20
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:78:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:31:19-59
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:77:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:32:13-36:29
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:79:13-83:29
 action#android.intent.action.MAIN
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:80:17-69
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:80:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:35:17-77
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:82:17-77
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:35:27-74
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:82:27-74
 activity#com.example.radio.Activity.SignupActivity2
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:38:9-62
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:85:9-87:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:87:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:38:19-59
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:86:13-53
 activity#com.example.radio.Activity.LoginActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:39:9-60
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:88:9-90:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:90:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:39:19-57
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:89:13-51
 activity#com.example.radio.Activity.DashboradActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:40:9-64
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:91:9-93:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:93:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:40:19-61
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:92:13-55
 activity#com.example.radio.MainActivity
-ADDED from D:\radio\app\src\main\AndroidManifest.xml:41:9-50
+ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:94:9-96:48
+	android:theme
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:96:13-45
 	android:name
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml:41:19-47
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml:95:13-41
 uses-sdk
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:4.1.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\196fc8175e854bc9ecb304d728caf5a0\jetified-viewbinding-4.1.3\AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:viewbinding:4.1.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\196fc8175e854bc9ecb304d728caf5a0\jetified-viewbinding-4.1.3\AndroidManifest.xml:20:5-44
 MERGED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:22:5-24:41
@@ -280,6 +359,8 @@ MERGED from [it.xabaras.android:recyclerview-swipedecorator:1.2.3] C:\Users\Admi
 MERGED from [it.xabaras.android:recyclerview-swipedecorator:1.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7d5e1bdac80e0959f39ad74b2d3b0432\jetified-recyclerview-swipedecorator-1.2.3\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\800ce6a7af9d21bfdfe3fc20cce07f7e\jetified-glide-4.12.0\AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.12.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\800ce6a7af9d21bfdfe3fc20cce07f7e\jetified-glide-4.12.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7bbe2fe08f2fdbe9fb38ae680d90bc1c\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7bbe2fe08f2fdbe9fb38ae680d90bc1c\jetified-volley-1.1.1\AndroidManifest.xml:7:5-43
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\b2eed882d796fb52c9b61c660696c994\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\b2eed882d796fb52c9b61c660696c994\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\4dec93481cf71d51546012d0824b55a2\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
@@ -374,30 +455,22 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Admin\.gradle\caches\transform
 MERGED from [androidx.print:print:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\86d0755ff4181c9336d0265657cdada3\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\162ddafcfd1cc9bd67ae0a1945277ee2\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\162ddafcfd1cc9bd67ae0a1945277ee2\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
-		ADDED from D:\radio\app\src\main\AndroidManifest.xml
-		INJECTED from D:\radio\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		ADDED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
+		INJECTED from D:\JD\myLogoApp\Demoapp\myLogoApp\myradioApp\app\src\main\AndroidManifest.xml
 activity#com.karumi.dexter.DexterActivity
 ADDED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:27:9-29:72
 	android:theme
 		ADDED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:29:13-69
 	android:name
 		ADDED from [com.karumi:dexter:6.2.3] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\2f685227de237ddbcebe85a0519399a8\jetified-dexter-6.2.3\AndroidManifest.xml:28:13-60
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:26:5-79
-MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\894f0d528dfe4e9c06b382812e4b3c99\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\894f0d528dfe4e9c06b382812e4b3c99\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7855a02a1335ea1a9ab769267768d0a8\jetified-firebase-database-20.0.1\AndroidManifest.xml:25:5-79
-MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\7855a02a1335ea1a9ab769267768d0a8\jetified-firebase-database-20.0.1\AndroidManifest.xml:25:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:26:22-76
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\dee6475a2921c5ecb243e57b832e9143\jetified-firebase-storage-20.0.0\AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Admin\.gradle\caches\transforms-2\files-2.1\894f0d528dfe4e9c06b382812e4b3c99\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19

@@ -1,25 +1,21 @@
-com/example/radio/databinding/CustomDashbordBinding.java
- com.example.radio.databinding.CustomDashbordBinding
+com/example/radio/databinding/LeaveStatusLayoutBinding.java
+ com.example.radio.databinding.LeaveStatusLayoutBinding
 com/example/radio/databinding/NavHeaderMainBinding.java
  com.example.radio.databinding.NavHeaderMainBinding
-com/example/radio/databinding/ActivityDashboradBinding.java
- com.example.radio.databinding.ActivityDashboradBinding
-com/example/radio/databinding/FragmentEmployeInfoBinding.java
- com.example.radio.databinding.FragmentEmployeInfoBinding
-com/example/radio/Model/StatusModel.java
- com.example.radio.Model.StatusModel
-com/example/radio/databinding/AppBarMainBinding.java
- com.example.radio.databinding.AppBarMainBinding
-com/example/radio/Model/GetAllTimeDataModel.java
- com.example.radio.Model.GetAllTimeDataModel
-com/example/radio/utils/PhoneTextFormatter.java
- com.example.radio.utils.PhoneTextFormatter
-com/example/radio/databinding/ActivityLogin1Binding.java
- com.example.radio.databinding.ActivityLogin1Binding
+com/example/radio/Adapter/LeaveStatusAdapter.java
+ com.example.radio.Adapter.LeaveStatusAdapter
+ com.example.radio.Adapter.LeaveStatusAdapter$CustomViewHolder
+com/example/radio/Model/EmpModel.java
+ com.example.radio.Model.EmpModel
+ com.example.radio.Model.EmpModel$1
+com/example/radio/databinding/ActivityLeaveStatusEmpBinding.java
+ com.example.radio.databinding.ActivityLeaveStatusEmpBinding
 com/example/radio/Adapter/EmployeTimeAdapter.java
  com.example.radio.Adapter.EmployeTimeAdapter
  com.example.radio.Adapter.EmployeTimeAdapter$1
  com.example.radio.Adapter.EmployeTimeAdapter$Custom_emp
+com/example/radio/databinding/ActivitySignUpBinding.java
+ com.example.radio.databinding.ActivitySignUpBinding
 com/example/radio/Activity/CheckTimeActivity.java
  com.example.radio.Activity.CheckTimeActivity
  com.example.radio.Activity.CheckTimeActivity$1
@@ -28,44 +24,29 @@ com/example/radio/databinding/EmpAllDataLayoutBinding.java
  com.example.radio.databinding.EmpAllDataLayoutBinding
 com/example/radio/databinding/DemoLayoutBinding.java
  com.example.radio.databinding.DemoLayoutBinding
-com/example/radio/Fragmenent/EmployeInfoFragment.java
- com.example.radio.Fragmenent.EmployeInfoFragment
 com/example/radio/utils/PhoneTextFormatters.java
  com.example.radio.utils.PhoneTextFormatters
-com/example/radio/BuildConfig.java
- com.example.radio.BuildConfig
 com/example/radio/databinding/ActivitySignup22Binding.java
  com.example.radio.databinding.ActivitySignup22Binding
-com/example/radio/Model/StatusCheckModel.java
- com.example.radio.Model.StatusCheckModel
-com/example/radio/databinding/ActivitySplashBinding.java
- com.example.radio.databinding.ActivitySplashBinding
 com/example/radio/Activity/EmployessActivity.java
  com.example.radio.Activity.EmployessActivity
  com.example.radio.Activity.EmployessActivity$1
  com.example.radio.Activity.EmployessActivity$1$1
  com.example.radio.Activity.EmployessActivity$2
-com/example/radio/databinding/FragmentRequestBinding.java
- com.example.radio.databinding.FragmentRequestBinding
-com/example/radio/databinding/ActivityInfoHrBinding.java
- com.example.radio.databinding.ActivityInfoHrBinding
-com/example/radio/Interface/ShowAllDataInterfsce.java
- com.example.radio.Interface.ShowAllDataInterfsce
-com/example/radio/Fragmenent/UserProfileFragment.java
- com.example.radio.Fragmenent.UserProfileFragment
-com/example/radio/databinding/ActivityUserAttendenceBinding.java
- com.example.radio.databinding.ActivityUserAttendenceBinding
-com/example/radio/Adapter/EmployessAdapter.java
- com.example.radio.Adapter.EmployessAdapter
- com.example.radio.Adapter.EmployessAdapter$1
- com.example.radio.Adapter.EmployessAdapter$Custom_emp
-com/example/radio/Fragmenent/RequestEmpFragment.java
- com.example.radio.Fragmenent.RequestEmpFragment
- com.example.radio.Fragmenent.RequestEmpFragment$1
- com.example.radio.Fragmenent.RequestEmpFragment$1$1
- com.example.radio.Fragmenent.RequestEmpFragment$1$1$1
+com/example/radio/Activity/SendMailInterfce.java
+ com.example.radio.Activity.SendMailInterfce
+com/example/radio/databinding/EmpLeavesLayoutBinding.java
+ com.example.radio.databinding.EmpLeavesLayoutBinding
+com/example/radio/Fragmenent/EmployeProfileFragment.java
+ com.example.radio.Fragmenent.EmployeProfileFragment
+ com.example.radio.Fragmenent.EmployeProfileFragment$1
+ com.example.radio.Fragmenent.EmployeProfileFragment$2
 com/example/radio/MainActivity.java
  com.example.radio.MainActivity
+com/example/radio/utils/Utils.java
+ com.example.radio.utils.Utils
+com/example/radio/databinding/AlertDialogeLayoutBinding.java
+ com.example.radio.databinding.AlertDialogeLayoutBinding
 com/example/radio/databinding/FragmentHrProfilekBinding.java
  com.example.radio.databinding.FragmentHrProfilekBinding
 com/example/radio/Adapter/ShowAllTimeAdapter.java
@@ -73,14 +54,14 @@ com/example/radio/Adapter/ShowAllTimeAdapter.java
  com.example.radio.Adapter.ShowAllTimeAdapter$CustomeViewHolder
 com/example/radio/databinding/ActivityEmployessBinding.java
  com.example.radio.databinding.ActivityEmployessBinding
-com/example/radio/databinding/EmpLayoutCustomBinding.java
- com.example.radio.databinding.EmpLayoutCustomBinding
 com/example/radio/databinding/ActivityDashborad2Binding.java
  com.example.radio.databinding.ActivityDashborad2Binding
 com/example/radio/databinding/CustomLayoutBinding.java
  com.example.radio.databinding.CustomLayoutBinding
 com/example/radio/databinding/ActivityListTimeBinding.java
  com.example.radio.databinding.ActivityListTimeBinding
+com/example/radio/Model/RegisterModel.java
+ com.example.radio.Model.RegisterModel
 com/example/radio/Adapter/DashbordAdapter.java
  com.example.radio.Adapter.DashbordAdapter
  com.example.radio.Adapter.DashbordAdapter$1
@@ -88,23 +69,25 @@ com/example/radio/Adapter/DashbordAdapter.java
  com.example.radio.Adapter.DashbordAdapter$3
  com.example.radio.Adapter.DashbordAdapter$4
  com.example.radio.Adapter.DashbordAdapter$CustomViewHolder
-com/example/radio/databinding/CustomDialogeLayoutBinding.java
- com.example.radio.databinding.CustomDialogeLayoutBinding
-com/example/radio/Model/AllData.java
- com.example.radio.Model.AllData
- com.example.radio.Model.AllData$1
-com/example/radio/databinding/CustomLayoutNewBinding.java
- com.example.radio.databinding.CustomLayoutNewBinding
+com/example/radio/Adapter/EmployeStatusAdapter.java
+ com.example.radio.Adapter.EmployeStatusAdapter
+ com.example.radio.Adapter.EmployeStatusAdapter$1
+ com.example.radio.Adapter.EmployeStatusAdapter$CustomViewHolder
 com/example/radio/databinding/NavHeaderEmployeBinding.java
  com.example.radio.databinding.NavHeaderEmployeBinding
+com/example/radio/Activity/LeaveStatusEmpActivity.java
+ com.example.radio.Activity.LeaveStatusEmpActivity
+ com.example.radio.Activity.LeaveStatusEmpActivity$1
+ com.example.radio.Activity.LeaveStatusEmpActivity$2
+ com.example.radio.Activity.LeaveStatusEmpActivity$2$1
+ com.example.radio.Activity.LeaveStatusEmpActivity$2$1$1
 com/example/radio/Model/TimeDateModel.java
  com.example.radio.Model.TimeDateModel
 com/example/radio/databinding/FragmentAttendenceBinding.java
  com.example.radio.databinding.FragmentAttendenceBinding
-com/example/radio/databinding/ActivityUserData2Binding.java
- com.example.radio.databinding.ActivityUserData2Binding
-com/example/radio/databinding/ActivityUserDataBinding.java
- com.example.radio.databinding.ActivityUserDataBinding
+com/example/radio/Activity/SendMail.java
+ com.example.radio.Activity.SendMail
+ com.example.radio.Activity.SendMail$1
 com/example/radio/databinding/ActivityEmployeBinding.java
  com.example.radio.databinding.ActivityEmployeBinding
 com/example/radio/Activity/LoginActivity.java
@@ -117,22 +100,231 @@ com/example/radio/Activity/LoginActivity.java
  com.example.radio.Activity.LoginActivity$3$1
  com.example.radio.Activity.LoginActivity$3$1$1
  com.example.radio.Activity.LoginActivity$3$2
-com/example/radio/UserStatusIntetFace.java
- com.example.radio.UserStatusIntetFace
-com/example/radio/databinding/FragmentEmployeBinding.java
- com.example.radio.databinding.FragmentEmployeBinding
-com/example/radio/EmployeActivity.java
- com.example.radio.EmployeActivity
+com/example/radio/databinding/CustomViewEmpDetailsBinding.java
+ com.example.radio.databinding.CustomViewEmpDetailsBinding
+com/example/radio/Fragmenent/HrProfilekFragment.java
+ com.example.radio.Fragmenent.HrProfilekFragment
+ com.example.radio.Fragmenent.HrProfilekFragment$1
+ com.example.radio.Fragmenent.HrProfilekFragment$2
+ com.example.radio.Fragmenent.HrProfilekFragment$3
+com/example/radio/Interface/RetrofitApi.java
+ com.example.radio.Interface.RetrofitApi
 com/example/radio/databinding/FragmentLeavesBinding.java
  com.example.radio.databinding.FragmentLeavesBinding
-com/example/radio/Activity/ListTimeActivity.java
- com.example.radio.Activity.ListTimeActivity
- com.example.radio.Activity.ListTimeActivity$1
+com/example/radio/Model/CheckModel.java
+ com.example.radio.Model.CheckModel
+com/example/radio/databinding/ActivitySplash2Binding.java
+ com.example.radio.databinding.ActivitySplash2Binding
+com/example/radio/databinding/CustomLeaveStatusLayoutBinding.java
+ com.example.radio.databinding.CustomLeaveStatusLayoutBinding
+com/example/radio/databinding/ActivityProfileBinding.java
+ com.example.radio.databinding.ActivityProfileBinding
+com/example/radio/databinding/EmpLeaveStatusLayoutBinding.java
+ com.example.radio.databinding.EmpLeaveStatusLayoutBinding
+com/example/radio/Adapter/CustomAdapter.java
+ com.example.radio.Adapter.CustomAdapter
+ com.example.radio.Adapter.CustomAdapter$1
+ com.example.radio.Adapter.CustomAdapter$CustomViewHolder
+com/example/radio/Adapter/EmployeDetailAdapter.java
+ com.example.radio.Adapter.EmployeDetailAdapter
+ com.example.radio.Adapter.EmployeDetailAdapter$1
+ com.example.radio.Adapter.EmployeDetailAdapter$2
+ com.example.radio.Adapter.EmployeDetailAdapter$CustomHolder
+com/example/radio/databinding/ActivityCheckTimeBinding.java
+ com.example.radio.databinding.ActivityCheckTimeBinding
+com/example/radio/databinding/CustomBinding.java
+ com.example.radio.databinding.CustomBinding
+com/example/radio/databinding/RejectedBinding.java
+ com.example.radio.databinding.RejectedBinding
+com/example/radio/databinding/AlertdialogBinding.java
+ com.example.radio.databinding.AlertdialogBinding
+com/example/radio/UserStatusIntetFace.java
+ com.example.radio.UserStatusIntetFace
+com/example/radio/Activity/UserDataActivity.java
+ com.example.radio.Activity.UserDataActivity
+ com.example.radio.Activity.UserDataActivity$1
+com/example/radio/Adapter/EmployessAdapter.java
+ com.example.radio.Adapter.EmployessAdapter
+ com.example.radio.Adapter.EmployessAdapter$1
+ com.example.radio.Adapter.EmployessAdapter$Custom_emp
+com/example/radio/EmployeActivity.java
+ com.example.radio.EmployeActivity
+com/example/radio/databinding/CustomDashbordBinding.java
+ com.example.radio.databinding.CustomDashbordBinding
+com/example/radio/databinding/ActivityDashboradBinding.java
+ com.example.radio.databinding.ActivityDashboradBinding
+com/example/radio/databinding/FragmentEmployeInfoBinding.java
+ com.example.radio.databinding.FragmentEmployeInfoBinding
+com/example/radio/Model/StatusModel.java
+ com.example.radio.Model.StatusModel
+com/example/radio/databinding/AppBarMainBinding.java
+ com.example.radio.databinding.AppBarMainBinding
+com/example/radio/Model/GetAllTimeDataModel.java
+ com.example.radio.Model.GetAllTimeDataModel
+com/example/radio/utils/PhoneTextFormatter.java
+ com.example.radio.utils.PhoneTextFormatter
+com/example/radio/Activity/DashActivity.java
+ com.example.radio.Activity.DashActivity
+ com.example.radio.Activity.DashActivity$1
+ com.example.radio.Activity.DashActivity$2
+ com.example.radio.Activity.DashActivity$2$1
+com/example/radio/databinding/ActivityLogin1Binding.java
+ com.example.radio.databinding.ActivityLogin1Binding
+com/example/radio/Activity/SubModel.java
+ com.example.radio.Activity.SubModel
+com/example/radio/Model/LeaveGetModel.java
+ com.example.radio.Model.LeaveGetModel
+com/example/radio/Activity/HrProfileActivity.java
+ com.example.radio.Activity.HrProfileActivity
+ com.example.radio.Activity.HrProfileActivity$1
+ com.example.radio.Activity.HrProfileActivity$2
+ com.example.radio.Activity.HrProfileActivity$3
+com/example/radio/databinding/ActivityEmpProfileBinding.java
+ com.example.radio.databinding.ActivityEmpProfileBinding
+com/example/radio/Activity/LeaveTakn.java
+ com.example.radio.Activity.LeaveTakn
+com/example/radio/JavaMailAPI.java
+ com.example.radio.JavaMailAPI
+ com.example.radio.JavaMailAPI$1
+com/example/radio/Fragmenent/EmployeInfoFragment.java
+ com.example.radio.Fragmenent.EmployeInfoFragment
+com/example/radio/databinding/ActivityApplyLeaveBinding.java
+ com.example.radio.databinding.ActivityApplyLeaveBinding
+com/example/radio/Activity/EmployeStatusInterface.java
+ com.example.radio.Activity.EmployeStatusInterface
+com/example/radio/BuildConfig.java
+ com.example.radio.BuildConfig
+com/example/radio/Model/StatusCheckModel.java
+ com.example.radio.Model.StatusCheckModel
+com/example/radio/databinding/ActivitySplashBinding.java
+ com.example.radio.databinding.ActivitySplashBinding
+com/example/radio/databinding/FragmentRequestBinding.java
+ com.example.radio.databinding.FragmentRequestBinding
+com/example/radio/databinding/ActivityInfoHrBinding.java
+ com.example.radio.databinding.ActivityInfoHrBinding
+com/example/radio/Interface/ShowAllDataInterfsce.java
+ com.example.radio.Interface.ShowAllDataInterfsce
+com/example/radio/Fragmenent/UserProfileFragment.java
+ com.example.radio.Fragmenent.UserProfileFragment
+com/example/radio/databinding/ActivityUserAttendenceBinding.java
+ com.example.radio.databinding.ActivityUserAttendenceBinding
+com/example/radio/Fragmenent/RequestEmpFragment.java
+ com.example.radio.Fragmenent.RequestEmpFragment
+ com.example.radio.Fragmenent.RequestEmpFragment$1
+ com.example.radio.Fragmenent.RequestEmpFragment$1$1
+ com.example.radio.Fragmenent.RequestEmpFragment$1$1$1
+com/example/radio/Model/LeaveModel.java
+ com.example.radio.Model.LeaveModel
+com/example/radio/RegisterModel2.java
+ com.example.radio.RegisterModel2
+com/example/radio/databinding/ActivityHrProfileBinding.java
+ com.example.radio.databinding.ActivityHrProfileBinding
+com/example/radio/databinding/EmpLayoutCustomBinding.java
+ com.example.radio.databinding.EmpLayoutCustomBinding
+com/example/radio/databinding/CustomLayoutNewBinding.java
+ com.example.radio.databinding.CustomLayoutNewBinding
 com/example/radio/Activity/ProfileActivity.java
  com.example.radio.Activity.ProfileActivity
  com.example.radio.Activity.ProfileActivity$1
-com/example/radio/Model/CheckModel.java
- com.example.radio.Model.CheckModel
+com/example/radio/Model/AllData.java
+ com.example.radio.Model.AllData
+ com.example.radio.Model.AllData$1
+com/example/radio/Activity/EmployeDetailsActivity.java
+ com.example.radio.Activity.EmployeDetailsActivity
+ com.example.radio.Activity.EmployeDetailsActivity$1
+ com.example.radio.Activity.EmployeDetailsActivity$1$1
+ com.example.radio.Activity.EmployeDetailsActivity$1$1$1
+ com.example.radio.Activity.EmployeDetailsActivity$1$1$1$1
+com/example/radio/Activity/SignUpActivity.java
+ com.example.radio.Activity.SignUpActivity
+ com.example.radio.Activity.SignUpActivity$1
+ com.example.radio.Activity.SignUpActivity$10
+ com.example.radio.Activity.SignUpActivity$10$1
+ com.example.radio.Activity.SignUpActivity$10$1$1
+ com.example.radio.Activity.SignUpActivity$10$1$2
+ com.example.radio.Activity.SignUpActivity$10$2
+ com.example.radio.Activity.SignUpActivity$10$2$1
+ com.example.radio.Activity.SignUpActivity$10$2$1$1
+ com.example.radio.Activity.SignUpActivity$2
+ com.example.radio.Activity.SignUpActivity$3
+ com.example.radio.Activity.SignUpActivity$4
+ com.example.radio.Activity.SignUpActivity$5
+ com.example.radio.Activity.SignUpActivity$6
+ com.example.radio.Activity.SignUpActivity$7
+ com.example.radio.Activity.SignUpActivity$8
+ com.example.radio.Activity.SignUpActivity$8$1
+ com.example.radio.Activity.SignUpActivity$9
+com/example/radio/Activity/LoginNewActivity.java
+ com.example.radio.Activity.LoginNewActivity
+ com.example.radio.Activity.LoginNewActivity$1
+ com.example.radio.Activity.LoginNewActivity$1$1
+ com.example.radio.Activity.LoginNewActivity$1$1$1
+ com.example.radio.Activity.LoginNewActivity$2
+ com.example.radio.Activity.LoginNewActivity$3
+ com.example.radio.Activity.LoginNewActivity$3$1
+ com.example.radio.Activity.LoginNewActivity$3$1$1
+ com.example.radio.Activity.LoginNewActivity$3$2
+com/example/radio/databinding/ActivityUserData2Binding.java
+ com.example.radio.databinding.ActivityUserData2Binding
+com/example/radio/databinding/ActivityUserDataBinding.java
+ com.example.radio.databinding.ActivityUserDataBinding
+com/example/radio/Activity/EmpProfileActivity.java
+ com.example.radio.Activity.EmpProfileActivity
+ com.example.radio.Activity.EmpProfileActivity$1
+ com.example.radio.Activity.EmpProfileActivity$2
+ com.example.radio.Activity.EmpProfileActivity$3
+com/example/radio/Activity/CustomConfig.java
+ com.example.radio.Activity.CustomConfig
+com/example/radio/databinding/FragmentEmployeBinding.java
+ com.example.radio.databinding.FragmentEmployeBinding
+com/example/radio/Activity/InfoHrActivity.java
+ com.example.radio.Activity.InfoHrActivity
+ com.example.radio.Activity.InfoHrActivity$1
+ com.example.radio.Activity.InfoHrActivity$2
+ com.example.radio.Activity.InfoHrActivity$3
+ com.example.radio.Activity.InfoHrActivity$4
+ com.example.radio.Activity.InfoHrActivity$5
+com/example/radio/databinding/ActivityDashBinding.java
+ com.example.radio.databinding.ActivityDashBinding
+com/example/radio/Activity/ListTimeActivity.java
+ com.example.radio.Activity.ListTimeActivity
+ com.example.radio.Activity.ListTimeActivity$1
+ com.example.radio.Activity.ListTimeActivity$10
+ com.example.radio.Activity.ListTimeActivity$10$1
+ com.example.radio.Activity.ListTimeActivity$11
+ com.example.radio.Activity.ListTimeActivity$12
+ com.example.radio.Activity.ListTimeActivity$2
+ com.example.radio.Activity.ListTimeActivity$3
+ com.example.radio.Activity.ListTimeActivity$3$1
+ com.example.radio.Activity.ListTimeActivity$4
+ com.example.radio.Activity.ListTimeActivity$4$1
+ com.example.radio.Activity.ListTimeActivity$5
+ com.example.radio.Activity.ListTimeActivity$6
+ com.example.radio.Activity.ListTimeActivity$6$1
+ com.example.radio.Activity.ListTimeActivity$7
+ com.example.radio.Activity.ListTimeActivity$8
+ com.example.radio.Activity.ListTimeActivity$8$1
+ com.example.radio.Activity.ListTimeActivity$8$2
+ com.example.radio.Activity.ListTimeActivity$8$2$1
+ com.example.radio.Activity.ListTimeActivity$9
+com/example/radio/EmployeEditProfileActivity.java
+ com.example.radio.EmployeEditProfileActivity
+ com.example.radio.EmployeEditProfileActivity$1
+ com.example.radio.EmployeEditProfileActivity$10
+ com.example.radio.EmployeEditProfileActivity$11
+ com.example.radio.EmployeEditProfileActivity$12
+ com.example.radio.EmployeEditProfileActivity$2
+ com.example.radio.EmployeEditProfileActivity$3
+ com.example.radio.EmployeEditProfileActivity$3$1
+ com.example.radio.EmployeEditProfileActivity$4
+ com.example.radio.EmployeEditProfileActivity$4$1
+ com.example.radio.EmployeEditProfileActivity$4$2
+ com.example.radio.EmployeEditProfileActivity$5
+ com.example.radio.EmployeEditProfileActivity$5$1
+ com.example.radio.EmployeEditProfileActivity$6
+ com.example.radio.EmployeEditProfileActivity$7
+ com.example.radio.EmployeEditProfileActivity$8
+ com.example.radio.EmployeEditProfileActivity$9
 com/example/radio/databinding/ActivityLoginBinding.java
  com.example.radio.databinding.ActivityLoginBinding
 com/example/radio/databinding/ActivitySignup2Binding.java
@@ -144,77 +336,32 @@ com/example/radio/Activity/DashboradActivity.java
  com.example.radio.Activity.DashboradActivity$2$1
  com.example.radio.Activity.DashboradActivity$2$1$1
  com.example.radio.Activity.DashboradActivity$3
-com/example/radio/Fragmenent/EmployeProfileFragment.java
- com.example.radio.Fragmenent.EmployeProfileFragment
- com.example.radio.Fragmenent.EmployeProfileFragment$1
- com.example.radio.Fragmenent.EmployeProfileFragment$2
-com/example/radio/databinding/ActivitySplash2Binding.java
- com.example.radio.databinding.ActivitySplash2Binding
+com/example/radio/Activity/SplashActivity2.java
+ com.example.radio.Activity.SplashActivity2
+ com.example.radio.Activity.SplashActivity2$1
+ com.example.radio.Activity.SplashActivity2$1$1
 com/example/radio/databinding/AcceptBinding.java
  com.example.radio.databinding.AcceptBinding
+com/example/radio/databinding/ActivityLoginNewBinding.java
+ com.example.radio.databinding.ActivityLoginNewBinding
+com/example/radio/Activity/User.java
+ com.example.radio.Activity.User
 com/example/radio/UserInterface.java
  com.example.radio.UserInterface
 com/example/radio/Fragmenent/LeavesFragment.java
  com.example.radio.Fragmenent.LeavesFragment
-com/example/radio/databinding/ActivityProfileBinding.java
- com.example.radio.databinding.ActivityProfileBinding
 com/example/radio/databinding/SpinnerDialogeBinding.java
  com.example.radio.databinding.SpinnerDialogeBinding
 com/example/radio/databinding/FragmentUserProfileBinding.java
  com.example.radio.databinding.FragmentUserProfileBinding
-com/example/radio/Adapter/CustomAdapter.java
- com.example.radio.Adapter.CustomAdapter
- com.example.radio.Adapter.CustomAdapter$1
- com.example.radio.Adapter.CustomAdapter$CustomViewHolder
+com/example/radio/databinding/ActivityEmployeDetailsBinding.java
+ com.example.radio.databinding.ActivityEmployeDetailsBinding
 com/example/radio/Fragmenent/TimeSetModel.java
  com.example.radio.Fragmenent.TimeSetModel
-com/example/radio/databinding/ActivityCheckTimeBinding.java
- com.example.radio.databinding.ActivityCheckTimeBinding
 com/example/radio/databinding/ActivityMainBinding.java
  com.example.radio.databinding.ActivityMainBinding
-com/example/radio/databinding/CustomBinding.java
- com.example.radio.databinding.CustomBinding
 com/example/radio/Adapter/SpinnerAdapterA.java
  com.example.radio.Adapter.SpinnerAdapterA
-com/example/radio/databinding/RejectedBinding.java
- com.example.radio.databinding.RejectedBinding
-com/example/radio/databinding/ActivityEmployeEditProfileBinding.java
- com.example.radio.databinding.ActivityEmployeEditProfileBinding
-com/example/radio/databinding/AlertdialogBinding.java
- com.example.radio.databinding.AlertdialogBinding
-com/example/radio/databinding/CustomEmpinfoLayoutBinding.java
- com.example.radio.databinding.CustomEmpinfoLayoutBinding
-com/example/radio/Activity/UserDataActivity.java
- com.example.radio.Activity.UserDataActivity
- com.example.radio.Activity.UserDataActivity$1
-com/example/radio/Fragmenent/AttendenceFragment.java
- com.example.radio.Fragmenent.AttendenceFragment
- com.example.radio.Fragmenent.AttendenceFragment$1
- com.example.radio.Fragmenent.AttendenceFragment$1$1
- com.example.radio.Fragmenent.AttendenceFragment$1$2
- com.example.radio.Fragmenent.AttendenceFragment$1$2$1
- com.example.radio.Fragmenent.AttendenceFragment$2
- com.example.radio.Fragmenent.AttendenceFragment$2$1
- com.example.radio.Fragmenent.AttendenceFragment$2$2
- com.example.radio.Fragmenent.AttendenceFragment$2$2$1
- com.example.radio.Fragmenent.AttendenceFragment$2$2$2
-com/example/radio/Model/RegisterModel.java
- com.example.radio.Model.RegisterModel
-com/example/radio/EmployeEditProfileActivity.java
- com.example.radio.EmployeEditProfileActivity
- com.example.radio.EmployeEditProfileActivity$1
- com.example.radio.EmployeEditProfileActivity$2
- com.example.radio.EmployeEditProfileActivity$3
- com.example.radio.EmployeEditProfileActivity$3$1
-com/example/radio/RegisterModel2.java
- com.example.radio.RegisterModel2
-com/example/radio/Activity/InfoHrActivity.java
- com.example.radio.Activity.InfoHrActivity
- com.example.radio.Activity.InfoHrActivity$1
- com.example.radio.Activity.InfoHrActivity$2
- com.example.radio.Activity.InfoHrActivity$3
- com.example.radio.Activity.InfoHrActivity$4
- com.example.radio.Activity.InfoHrActivity$5
 com/example/radio/Activity/SignupActivity2.java
  com.example.radio.Activity.SignupActivity2
  com.example.radio.Activity.SignupActivity2$1
@@ -234,18 +381,60 @@ com/example/radio/Activity/SignupActivity2.java
  com.example.radio.Activity.SignupActivity2$8
  com.example.radio.Activity.SignupActivity2$8$1
  com.example.radio.Activity.SignupActivity2$9
-com/example/radio/Activity/SplashActivity2.java
- com.example.radio.Activity.SplashActivity2
- com.example.radio.Activity.SplashActivity2$1
- com.example.radio.Activity.SplashActivity2$1$1
-com/example/radio/Fragmenent/HrProfilekFragment.java
- com.example.radio.Fragmenent.HrProfilekFragment
- com.example.radio.Fragmenent.HrProfilekFragment$1
- com.example.radio.Fragmenent.HrProfilekFragment$2
- com.example.radio.Fragmenent.HrProfilekFragment$3
+com/example/radio/databinding/CustomEmpinfoLayoutBinding.java
+ com.example.radio.databinding.CustomEmpinfoLayoutBinding
+com/example/radio/Fragmenent/AttendenceFragment.java
+ com.example.radio.Fragmenent.AttendenceFragment
+ com.example.radio.Fragmenent.AttendenceFragment$1
+ com.example.radio.Fragmenent.AttendenceFragment$2
+ com.example.radio.Fragmenent.AttendenceFragment$3
+ com.example.radio.Fragmenent.AttendenceFragment$4
+ com.example.radio.Fragmenent.AttendenceFragment$5
+ com.example.radio.Fragmenent.AttendenceFragment$6
+ com.example.radio.Fragmenent.AttendenceFragment$7
+ com.example.radio.Fragmenent.AttendenceFragment$8
+ com.example.radio.Fragmenent.AttendenceFragment$8$1
+com/example/radio/databinding/ActivityEmployeEditProfileBinding.java
+ com.example.radio.databinding.ActivityEmployeEditProfileBinding
+com/example/radio/databinding/ActivityLeavesBinding.java
+ com.example.radio.databinding.ActivityLeavesBinding
+com/example/radio/databinding/CustomDialogeLayoutBinding.java
+ com.example.radio.databinding.CustomDialogeLayoutBinding
+com/example/radio/Activity/TemplateParams.java
+ com.example.radio.Activity.TemplateParams
+com/example/radio/Model/NewDataGetModel.java
+ com.example.radio.Model.NewDataGetModel
+com/example/radio/Activity/TemplatePerems.java
+ com.example.radio.Activity.TemplatePerems
+com/example/radio/TemplatePrarem.java
+ com.example.radio.TemplatePrarem
+com/example/radio/FirstClass.java
+ com.example.radio.FirstClass
+com/example/radio/Activity/Response.java
+ com.example.radio.Activity.Response
 com/example/radio/Activity/UserAttendenceActivity.java
  com.example.radio.Activity.UserAttendenceActivity
  com.example.radio.Activity.UserAttendenceActivity$1
  com.example.radio.Activity.UserAttendenceActivity$2
  com.example.radio.Activity.UserAttendenceActivity$3
  com.example.radio.Activity.UserAttendenceActivity$4
+com/example/radio/Activity/ApplyLeaveActivity.java
+ com.example.radio.Activity.ApplyLeaveActivity
+ com.example.radio.Activity.ApplyLeaveActivity$1
+ com.example.radio.Activity.ApplyLeaveActivity$2
+ com.example.radio.Activity.ApplyLeaveActivity$3
+ com.example.radio.Activity.ApplyLeaveActivity$4
+ com.example.radio.Activity.ApplyLeaveActivity$5
+ com.example.radio.Activity.ApplyLeaveActivity$6
+ com.example.radio.Activity.ApplyLeaveActivity$6$1
+ com.example.radio.Activity.ApplyLeaveActivity$6$1$1
+com/example/radio/Activity/LeavesActivity.java
+ com.example.radio.Activity.LeavesActivity
+ com.example.radio.Activity.LeavesActivity$1
+ com.example.radio.Activity.LeavesActivity$1$1
+ com.example.radio.Activity.LeavesActivity$2
+ com.example.radio.Activity.LeavesActivity$3
+ com.example.radio.Activity.LeavesActivity$4
+ com.example.radio.Activity.LeavesActivity$5
+ com.example.radio.Activity.LeavesActivity$6
+ com.example.radio.Activity.LeavesActivity$MyWebViewClient

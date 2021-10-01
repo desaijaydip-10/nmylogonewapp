@@ -3,9 +3,15 @@
     package="com.example.radio">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CAMERA2" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -16,29 +22,78 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Radio">
-        <activity android:name=".EmployeEditProfileActivity"></activity>
-        <activity android:name=".Activity.ListTimeActivity" android:theme="@style/DemoTheme" />
-        <activity android:name=".Activity.CheckTimeActivity"  android:theme="@style/DemoTheme" />
-        <activity android:name=".Activity.EmployessActivity"  android:theme="@style/DemoTheme"/>
+        <activity
+            android:name=".Activity.EmployeDetailsActivity"
+            android:theme="@style/DemoTheme"></activity>
+        <activity
+            android:name=".Activity.LeaveStatusEmpActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.SignUpActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.LoginNewActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.HrProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.EmpProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.DashActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.LeavesActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.ApplyLeaveActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".EmployeEditProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.ListTimeActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.CheckTimeActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.EmployessActivity"
+            android:theme="@style/DemoTheme" />
         <activity
             android:name=".Activity.InfoHrActivity"
             android:theme="@style/DemoTheme" />
         <activity
             android:name=".Activity.UserAttendenceActivity"
             android:theme="@style/DemoTheme" />
-        <activity android:name=".Activity.ProfileActivity" android:theme="@style/DemoTheme" />
-        <activity android:name=".Activity.UserDataActivity"  android:theme="@style/DemoTheme"/>
-        <activity android:name=".Activity.SplashActivity2">
+        <activity
+            android:name=".Activity.ProfileActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.UserDataActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.SplashActivity2"
+            android:theme="@style/DemoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.SignupActivity2" />
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.DashboradActivity" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Activity.SignupActivity2"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".Activity.DashboradActivity"
+            android:theme="@style/DemoTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/DemoTheme" />
     </application>
 
 </manifest>

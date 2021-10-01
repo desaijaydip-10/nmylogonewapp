@@ -30,10 +30,10 @@ public class EmployeInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_employe_info, container, false);
-        img = new int[]{R.drawable.ic_interview_1, R.drawable.ic_businessman_1, R.drawable.ic_time_1};
+        img = new int[]{R.drawable.ic_interview_1, R.drawable.ic_businessman_1, R.drawable.ic_time_1, R.drawable.ic_emp_leaves};
 
 
-        emp_info = new String[]{"Request", "Employees","Check Time"};
+        emp_info = new String[]{"Request", "Employees","Check Time", "Employees Leave"};
 
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerview1);

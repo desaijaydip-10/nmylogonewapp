@@ -23,5 +23,10 @@
         android:icon="@drawable/ic_exit_1"
         android:title="Logout" />
 
+<!--    <item-->
+<!--        android:id="@+id/empleaves"-->
+<!--        android:icon="@drawable/ic_emp_leaves"-->
+<!--        android:title="Employees Leave" />-->
+
 
 </menu>
