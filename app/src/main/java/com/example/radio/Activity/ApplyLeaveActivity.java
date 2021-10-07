@@ -6,6 +6,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,14 +24,15 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.radio.Adapter.SpinnerAdapterA;
 
+import com.example.radio.Model.CustomModel;
 import com.example.radio.Model.LeaveModel;
+import com.example.radio.Model.TemplateParams;
 import com.example.radio.R;
 ;
 import com.example.radio.databinding.ActivityApplyLeaveBinding;
@@ -53,7 +57,20 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -74,7 +91,6 @@ public class ApplyLeaveActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     String url = "https://api.emailjs.com/api/v1.0/email/send";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +99,6 @@ public class ApplyLeaveActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         String currentId = auth.getCurrentUser().getUid();
-
 
         leaveType = new String[]{"Leave Type", "Privilege Leave", "Casual Leave ", "Sick Leave"};
 
@@ -156,9 +171,11 @@ public class ApplyLeaveActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
                 switch (checkedId) {
+
                     case R.id.fulltimeRadioButton:
 
                         timeSelector = applyLeaveBinding.fulltimeRadioButton.getText().toString();
+
                         break;
                     case R.id.halftimeRadioButton:
                         timeSelector = applyLeaveBinding.halftimeRadioButton.getText().toString();
@@ -242,8 +259,7 @@ public class ApplyLeaveActivity extends AppCompatActivity {
 
                             em = snapshot.child("mselected").getValue(String.class);
 
-                            LeaveModel leaveModel = new LeaveModel(auth.getCurrentUser().getUid(), leavetpe, startDate, endDate, timeSelector, reasone, "0", daydiff, em, "1");
-
+                            LeaveModel leaveModel = new LeaveModel(auth.getCurrentUser().getUid(), leavetpe, startDate, endDate, timeSelector, reasone, "0", daydiff, em, "1" ,"1" );
 
                             reference.child(startDate).setValue(leaveModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -253,118 +269,78 @@ public class ApplyLeaveActivity extends AppCompatActivity {
 
                                         Toast.makeText(ApplyLeaveActivity.this, "successs", Toast.LENGTH_SHORT).show();
 
+
+
+//                                          String email = "jd.idea2cod@gmail.com";
+//                                          String pass = "idea2code";
+//
+//                                        Properties props = new Properties();
+//                                        props.put("mail.smtp.auth", "true");
+//                                        props.put("mail.smtp.starttls.enable", "true");
+//                                        props.put("mail.smtp.host", "smtp.gmail.com");
+//                                        props.put("mail.smtp.port", "586");
+//
+//                                        Session session = Session.getInstance(props,
+//                                                new javax.mail.Authenticator() {
+//                                                    protected PasswordAuthentication getPasswordAuthentication() {
+//                                                        return new PasswordAuthentication(email, pass);
+//                                                    }
+//                                                });
+//
+//                                        try {
+//
+//                                            Message message = new MimeMessage(session);
+//                                            message.setFrom(new InternetAddress(email));
+//                                            message.setRecipients(Message.RecipientType.TO,
+//                                                    InternetAddress.parse("jd.idea2cod@gmail.com"));
+//                                            message.setSubject("Testing Subject");
+//                                            message.setText("Dear Mail Crawler,"
+//                                                    + "\n\n No spam to my email, please!");
+//
+//                                            Transport.send(message);
+//
+//                                            System.out.println("Done");
+//
+//                                        } catch (MessagingException e) {
+//                                            throw new RuntimeException(e);
+//                                        }
+
+
+
+
+//                                        NotificationManager notif=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+//                                        Notification notify=new Notification.Builder
+//                                                (getApplicationContext()).setContentTitle("dddsdsjaydeep ").setContentText("accept").
+//                                                setContentTitle("Kghkhjhjghj").setSmallIcon(R.drawable.ic_icon).build();
+//
+//                                        notify.flags = Notification.FLAG_AUTO_CANCEL;
+//                                        notif.notify(0, notify);
+
+
+
+
 //                                        Retrofit retrofit = new Retrofit.Builder()
 //                                                .baseUrl("https://reqres.in/api/")
 //                                                .addConverterFactory(GsonConverterFactory.create())
 //                                                .build();
-
-
-//                                        String serviceid = "service_xiiiaid";
-//                                        String templateid = "template_95odc8d";
-//                                        String userid = "user_RQafz4zI1Hwtgdh5AOpbq";
 //
-//                                        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//
+//                                        TemplateParams templateParams = new TemplateParams("asdsdasda", "jd.idea2code@gmail.com", "asdf", "jj.idea2code@gmail.com", "Hello...", "dgdfgfg");
+//                                        CustomModel customModel = new CustomModel("service_xiiiaid", "template_95odc8d", "user_RQafz4zI1Hwtgdh5AOpbq", templateParams);
+//
+//                                        SendMailInterfce mailInterfce = retrofit.create(SendMailInterfce.class);
+//
+//                                        Call<CustomModel> call = mailInterfce.setValue(customModel);
+//
+//                                        call.enqueue(new Callback<CustomModel>() {
 //                                            @Override
-//                                            public void onResponse(String response) {
-//
-//                                            }
-//                                        }, new Response.ErrorListener() {
-//                                            @Override
-//                                            public void onErrorResponse(VolleyError error) {
-//
-//                                            }
-//
-//
-//                                        }) {
-//
-//                                            @Nullable
-//                                            @Override
-//                                            protected Map<String, String> getParams() throws AuthFailureError {
-//
-//
-//                                                Map<String, String> params = new HashMap<String, String>();
-//                                                params.put("service_id", "service_xiiiaid");
-//                                                params.put("template_id", "template_95odc8d");
-//                                                params.put("user_id", "user_RQafz4zI1Hwtgdh5AOpbq");
-//
-//                                                params.put("user_name", "asdsdasda");
-//                                                params.put("user_email", "jd.idea2code@gmail.com");
-//                                                params.put("user_subject", "asdfdsda");
-//                                                params.put("to_email", "jj.idea2code@gmail.com");
-//                                                params.put("user_message", "Hello..");
-//                                                params.put("to_name", "dgdfgfg");
-//                                                return params;
+//                                            public void onResponse(Call<CustomModel> call, Response<CustomModel> response) {
 //
 //
 //                                            }
 //
 //                                            @Override
-//                                            public Map<String, String> getHeaders() throws AuthFailureError {
-//                                                Map<String, String> param = new HashMap<String, String>();
-//                                                param.put("origin", "https://idea2codeinfotech.com/");
-//                                                param.put("Content-Type", "application/json");
-//                                                return param;
-//                                            }
-//                                        };
-//                                        requestQueue = Volley.newRequestQueue(ApplyLeaveActivity.this);
-//                                        requestQueue.add(request);
-
-
-//                                        TemplatePrarem templatePrarem = new TemplatePrarem("Paras", "pv.idea2code@gmail.com", "asdf", "jj.idea2code@gmail.com", "Hello...", "akit Virani");
-//                                        FirstClass firstClass = new FirstClass();
-//
-//
-//                                        RetrofitApi retrofitAPI = retrofit.create(RetrofitApi.class);
-//
-//
-//                                        Call<Response> call=retrofitAPI.SendData();
-//                                        call.enqueue(new Callback<Response>() {
-//
-//                                            @Override
-//                                            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-////
-//                                            }
-//
-//                                            @Override
-//                                            public void onFailure(Call<Response> call, Throwable t) {
-//
-//                                            }
-//                                        });
-
-
-//                                        String email = "mv.idea2code@gmail.com";
-//                                        String subject = "mihir@2001";
-//
-//                                        String message =  "sffafsdgdfgdggdggsuccess jaydeep  desai";
-//
-//
-//                                        HashMap<String  ,String> hashMap = new HashMap<>();
-
-
-//                                        DatabaseReference subreference = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid());
-
-//                                        subreference.addListenerForSingleValueEvent(new ValueEventListener() {
-//                                            @Override
-//                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//
-//                                                String pass = snapshot.child("mpassword").getValue(String.class);
-//                                                String emails = snapshot.child("mCompanyemail").getValue(String.class);
-//
-//
-//                                                SendMail sm = new SendMail(ApplyLeaveActivity.this, email, subject, message, emails, pass);
-//                                                sm.execute();
-//
-//
-//
-//
-//
-//
-//
-//                                            }
-//
-//                                            @Override
-//                                            public void onCancelled(@NonNull DatabaseError error) {
+//                                            public void onFailure(Call<CustomModel> call, Throwable t) {
 //
 //                                            }
 //                                        });
@@ -445,17 +421,17 @@ public class ApplyLeaveActivity extends AppCompatActivity {
         SimpleDateFormat sdfd = new SimpleDateFormat(newFforma, Locale.US);
         newformatEndDate = sdfd.format(mCalendar.getTime());
 
-
     }
 
     public void backside(View view) {
+
         startActivity(new Intent(ApplyLeaveActivity.this, LeavesActivity.class));
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-       finish();
+        finish();
     }
 
 

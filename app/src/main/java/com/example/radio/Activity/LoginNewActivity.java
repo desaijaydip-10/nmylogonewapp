@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.radio.Model.AllData;
 import com.example.radio.R;
-import com.example.radio.databinding.ActivityLoginBinding;
+
 import com.example.radio.databinding.ActivityLoginNewBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -43,11 +43,10 @@ public class LoginNewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_new);
 
         loginNewBinding = ActivityLoginNewBinding.inflate(getLayoutInflater());
-
         setContentView(loginNewBinding.getRoot());
+
         auth = FirebaseAuth.getInstance();
         arrayList = new ArrayList<>();
 

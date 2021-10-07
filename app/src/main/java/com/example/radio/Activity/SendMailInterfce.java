@@ -2,6 +2,7 @@ package com.example.radio.Activity;
 
 
 
+import com.example.radio.Model.CustomModel;
 import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
@@ -16,11 +17,11 @@ public interface SendMailInterfce {
 
 
 
-    @FormUrlEncoded
+
     @POST("api/v1.0/email/send")
     @Headers({
             "origin: https://idea2codeinfotech.com/",
             "Content-Type: application/json"
     })
-    Call<User> createUser(@Body JSONObject jsonObject);
+    Call<CustomModel> setValue(@Body CustomModel customModel);
 }

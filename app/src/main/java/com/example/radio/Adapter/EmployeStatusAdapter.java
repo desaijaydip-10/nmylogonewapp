@@ -30,12 +30,14 @@ public class EmployeStatusAdapter extends RecyclerView.Adapter<EmployeStatusAdap
     Context context;
     ArrayList<AllData> allDataArrayList;
     ArrayList<LeaveGetModel> arrayList;
+    int  sum;
 
 
-    public EmployeStatusAdapter(Context context, ArrayList<LeaveGetModel> arrayList, ArrayList<AllData> allDataArrayList) {
+    public EmployeStatusAdapter(Context context, ArrayList<LeaveGetModel> arrayList,int i ,  ArrayList<AllData> allDataArrayList) {
         this.context = context;
         this.allDataArrayList = allDataArrayList;
         this.arrayList = arrayList;
+        this.sum = i;
     }
 
     @NonNull
@@ -50,19 +52,26 @@ public class EmployeStatusAdapter extends RecyclerView.Adapter<EmployeStatusAdap
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
 
         AllData allData = allDataArrayList.get(position);
-//
-//        String names = allData.getmName();
-//        Log.e("sdffsd", names);
 
+
+          int  ss=0;
+          ss= ss+sum ;
+//       String leave=leaveGetModel.getLeaveTaken();
+//        int leavecnt= Integer.parseInt(leave);
+//        leavecnt  += leavecnt;
+
+//        Log.e("Sfdsf", String.valueOf(leave));
+
+
+        holder.cntNotification.setText(String.valueOf(ss));
 
         holder.empNameTextview.setText(allData.getmName());
 
-        if(allData.getImgUrl()== null){
+        if(allData.getImgUrl() == null){
             holder.empcircleImageView.setImageResource(R.drawable.ic_user);
         }
         else {
             Glide.with(context).load(allData.getImgUrl()).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.empcircleImageView);
-
         }
 
 
@@ -71,7 +80,7 @@ public class EmployeStatusAdapter extends RecyclerView.Adapter<EmployeStatusAdap
               public void onClick(View v) {
 
                   Intent intent = new Intent(context, EmployeDetailsActivity.class);
-                  intent.putExtra("userid", arrayList.get(position).getUserid());
+                  intent.putExtra("userid",arrayList.get(position).getUserid());
                   context.startActivity(intent);
               }
           });
@@ -86,7 +95,8 @@ public class EmployeStatusAdapter extends RecyclerView.Adapter<EmployeStatusAdap
     class CustomViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView empcircleImageView;
-        TextView empNameTextview;
+        TextView empNameTextview, cntNotification;
+
 
         CardView cardView;
 
@@ -96,9 +106,7 @@ public class EmployeStatusAdapter extends RecyclerView.Adapter<EmployeStatusAdap
             empcircleImageView = itemView.findViewById(R.id.empprofileImg);
             empNameTextview = itemView.findViewById(R.id.empTextView);
             cardView  = itemView.findViewById(R.id.custom_cardvide);
-
-
-
+            cntNotification = itemView.findViewById(R.id.countTextView);
         }
     }
 }

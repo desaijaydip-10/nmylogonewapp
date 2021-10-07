@@ -65,7 +65,7 @@ public class EmployessActivity extends AppCompatActivity {
                     String status = allData.getCheckedStatus();
 
 
-                    if (selected.equals("Employee") && check == true) {
+                    if (selected.equals("Employee") && status.equals("1")) {
 
                         arrayList.add(allData);
 

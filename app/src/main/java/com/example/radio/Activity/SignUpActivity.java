@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
     static String mselector;
     private DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
-    String imageUri = "";
+    String imageUri ="";
 
     Spinner spinner, spinner2;
     boolean verifyCheck = false;
@@ -94,7 +94,7 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
                     "(?=\\S+$)" +            // no white spaces
                     ".{4,}" +                // at least 4 characters
                     "$");
-    private String imageurl2;
+     String imageurl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -439,37 +439,6 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
         } else {
 
 
-//                        DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
-//                                .setLink(Uri.parse("https://appdemo12.page.link/verify"))
-//                                .setDomainUriPrefix("https://appdemo12.page.link")
-//                                .setAndroidParameters(
-//                                        new DynamicLink.AndroidParameters.Builder("com.example.demo")
-//                                                .setMinimumVersion(125)
-//                                                .build())
-//                                .setIosParameters(
-//                                        new DynamicLink.IosParameters.Builder("com.example.ios")
-//                                                .setAppStoreId("123456789")
-//                                                .setMinimumVersion("1.0.1")
-//                                                .build())
-//                                .setGoogleAnalyticsParameters(
-//                                        new DynamicLink.GoogleAnalyticsParameters.Builder()
-//                                                .setSource("orkut")
-//                                                .setMedium("social")
-//                                                .setCampaign("example-promo")
-//                                                .build())
-//                                .setItunesConnectAnalyticsParameters(
-//                                        new DynamicLink.ItunesConnectAnalyticsParameters.Builder()
-//                                                .setProviderToken("123456")
-//                                                .setCampaignToken("example-promo")
-//                                                .build())
-//                                .setSocialMetaTagParameters(
-//                                        new DynamicLink.SocialMetaTagParameters.Builder()
-//                                                .setTitle("Example of a Dynamic Link")
-//                                                .setDescription("This link works whether the app is installed or not!")
-//                                                .build())
-//                                .buildDynamicLink();  // Or buildShortDynamicLink()
-//
-
             mAuth.createUserWithEmailAndPassword(company_email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -510,14 +479,12 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
                                     public void onSuccess(Uri uri) {
                                         imageurl2 = uri.toString();
 
-                                        //  reference2.setValue(imageurl);//store link in database
-//                        Log.i("Image url", uri.toString());
 
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        //Handle any errors
+
                                     }
                                 });
                             }
@@ -529,21 +496,13 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
                         model.setMselected(mselector);
 
 
-                        //  to create   databaserefrence  uploade  data
+
                         databaseReference.child(uid).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
                                 if (task.isSuccessful()) {
 
-                                    // progressBar23.setVisibility(View.GONE);
-//                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-//
-//
-//                                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-//                                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-//
-//
                                     getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                                     dialog5.dismiss();
@@ -591,7 +550,7 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
                                                         // getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
 
-                                                        startActivity(new Intent(SignUpActivity.this, LoginNewActivity.class));
+                                                        startActivity(new Intent(SignUpActivity.this, LogActivity.class));
 
                                                         dialog1.dismiss();
                                                     }
@@ -635,13 +594,13 @@ public class SignUpActivity extends AppCompatActivity implements MultiplePermiss
 
         String myFormat = "dd /MM /yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
         activitySignup2Binding.editTextTextPersonDate.setText(sdf.format(myCalendar.getTime()));
     }
 
     private void updateLabel() {
         String myFormat = "dd /MM /yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
 
         activitySignup2Binding.spinner2.setText(sdf.format(myCalendar.getTime()));
     }

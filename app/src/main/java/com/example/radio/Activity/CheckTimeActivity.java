@@ -65,12 +65,9 @@ public class CheckTimeActivity extends AppCompatActivity {
                     String selected = allData.getMselected();
                     boolean check = allData.isVerifyCheck();
 
-
-
                     if (selected.equals("Employee") && check == true) {
 
                         arrayList.add(allData);
-
                         recyclerView_emp.setLayoutManager(new LinearLayoutManager(CheckTimeActivity.this));
                         EmployeTimeAdapter emp   = new EmployeTimeAdapter(CheckTimeActivity.this,arrayList );
 

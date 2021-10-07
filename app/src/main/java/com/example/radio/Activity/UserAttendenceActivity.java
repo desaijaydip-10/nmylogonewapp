@@ -155,7 +155,8 @@ public class UserAttendenceActivity extends AppCompatActivity {
 
                       drawer.closeDrawers();
                   }
-                  else if(item.getItemId()==R.id.profile ){
+                  else if(item.getItemId()==R.id.profile )
+                  {
                       startActivity(new Intent(UserAttendenceActivity.this, EmpProfileActivity.class));
                       drawer.closeDrawers();
                   }
@@ -167,10 +168,11 @@ public class UserAttendenceActivity extends AppCompatActivity {
                       startActivity(intent);
 
 
+
                       drawer.closeDrawers();
 
-
                       textView1.setText("Leaves");
+
                       drawer.closeDrawers();
 
                   }
@@ -199,7 +201,7 @@ public class UserAttendenceActivity extends AppCompatActivity {
                     snapshot.getRef().child("userlogin").setValue("0");
                     auth.signOut();
                     Toast.makeText(UserAttendenceActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(UserAttendenceActivity.this, LoginNewActivity.class));
+                    startActivity(new Intent(UserAttendenceActivity.this, LogActivity.class));
                 }
 
                 @Override

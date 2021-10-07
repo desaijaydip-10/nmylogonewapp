@@ -64,7 +64,6 @@ public class EmployeDetailAdapter extends RecyclerView.Adapter<EmployeDetailAdap
             public void onClick(View v) {
 
 
-
                 employeStatusInterface.employeStatus("1", leaveGetModel.getStartdate(), leaveGetModel.getUserid());
 
             }

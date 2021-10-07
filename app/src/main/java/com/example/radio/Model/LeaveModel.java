@@ -14,13 +14,15 @@ public class LeaveModel {
     String categorychoose;
     int leavedate;
 
-
-
     String leavetaken;
 
 
 
-    public LeaveModel(String userid, String leavetype, String startdate, String enddate, String leaveday, String reasone, String statuschechk, int leavedate, String categorychoose, String leavetaken) {
+    String notifiy;
+
+
+
+    public LeaveModel(String userid, String leavetype, String startdate, String enddate, String leaveday, String reasone, String statuschechk, int leavedate, String categorychoose, String leavetaken, String  notifiy  ) {
         this.leavetype = leavetype;
         this.startdate = startdate;
         this.enddate = enddate;
@@ -31,6 +33,7 @@ public class LeaveModel {
         this.userid = userid;
         this.categorychoose= categorychoose;
         this.leavetaken= leavetaken;
+        this.notifiy= notifiy;
     }
 
     public String getLeavetype() {
@@ -45,7 +48,13 @@ public class LeaveModel {
     public void setLeavetaken(String leavetaken) {
         this.leavetaken = leavetaken;
     }
+    public String getNotifiy() {
+        return notifiy;
+    }
 
+    public void setNotifiy(String notifiy) {
+        this.notifiy = notifiy;
+    }
 
 
 

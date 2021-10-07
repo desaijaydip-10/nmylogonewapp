@@ -38,8 +38,6 @@ public class SplashActivity2 extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
 
-
-
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -47,8 +45,6 @@ public class SplashActivity2 extends AppCompatActivity {
 
 
                 if (currentUser != null && currentUser.isEmailVerified()) {
-
-
 
                     databaseReference12 = FirebaseDatabase.getInstance().getReference().child("user").child(currentUser.getUid());
                     databaseReference12.addValueEventListener(new ValueEventListener() {
@@ -58,7 +54,7 @@ public class SplashActivity2 extends AppCompatActivity {
 
                                 if (!isRead) {
                                     String em2 = snapshot.child("mselected").getValue(String.class);
-                                    String val = snapshot.child("checkedstatus").getValue(String.class);
+                                    String val = snapshot.child("checkedStatus").getValue(String.class);
 
 
                                     if (em2.equals("HR")) {
@@ -73,15 +69,14 @@ public class SplashActivity2 extends AppCompatActivity {
 
                                             startActivity(new Intent(SplashActivity2.this, DashActivity.class));
                                             isRead = true;
-                                            finish();
+//                                            finish();
                                         }
 
                                         else
                                         {
-
                                             startActivity(new Intent(SplashActivity2.this, UserAttendenceActivity.class));
                                             isRead = true;
-                                            finish();
+//                                            finish();
 
                                         }
                                     }
@@ -112,7 +107,7 @@ public class SplashActivity2 extends AppCompatActivity {
 
 
                 } else {
-                    startActivity(new Intent(SplashActivity2.this, LoginNewActivity.class));
+                    startActivity(new Intent(SplashActivity2.this, LogActivity.class));
                 }
 
             }

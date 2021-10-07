@@ -65,6 +65,7 @@ public class LeavesActivity extends AppCompatActivity {
 
 
 
+
         refrence.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -80,24 +81,25 @@ public class LeavesActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+
                             String getleave = snapshot.child("leavetaken").getValue(String.class);
 
                             if (getleave.equals("1")) {
 
                                 leaves = leavesBinding.leaveTakenTextView.getText().toString();
+
                                 int  c = Integer.parseInt(leaves);
 
                                 Log.e("sffsdfsd", String.valueOf(c));
 
                                 count = ++c;
                             }
+
                             leavesBinding.leaveTakenTextView.setText(String.valueOf(count));
 
                         }
-
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-
                         }
 
                     });
@@ -211,6 +213,7 @@ public class LeavesActivity extends AppCompatActivity {
     }
 
     private void setApplyLeaves() {
+
         startActivity(new Intent(LeavesActivity.this, ApplyLeaveActivity.class));
     }
 

@@ -42,12 +42,10 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
     private StorageReference storageReference;
 //    UserStatusIntetFace userStatusIntetFace;
 
-    public DashbordAdapter(Context context, ArrayList<AllData> arrayList,  String value, UserStatusIntetFace userStatusIntetFace) {
+    public DashbordAdapter(Context context, ArrayList<AllData> arrayList,  UserStatusIntetFace userStatusIntetFace) {
 
         this.context = context;
         this.arrayList = arrayList;
-
-        this.value = value;
         this.userStatusIntetFace = userStatusIntetFace;
         auth = FirebaseAuth.getInstance();
 
@@ -87,12 +85,10 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
             holder.img.setVisibility(View.VISIBLE);
             holder.img.setImageResource(R.drawable.ic_right);
 
-
             binderHelper.lockSwipe(arrayList.get(position).getUserid());
 
         }
         else if (arrayList.get(position).getCheckedStatus().equals("2")) {
-
 
             holder.img.setVisibility(View.VISIBLE);
             holder.img.setImageResource(R.drawable.ic_cancel_svgrepo_com);
@@ -100,12 +96,9 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
         }
 
         if (arrayList.get(position).getImgUrl() == null) {
-
             holder.pf_img.setBackgroundResource(R.drawable.ic_user);
 
         }
-
-
 
         holder.swipeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,7 +114,6 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
             @Override
             public void onClick(View v) {
 
-
                 statuschecked = "1";
                 userStatusIntetFace.userStatusInterface(statuschecked, arrayList.get(position).getUserid());
 
@@ -133,13 +125,7 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
 
                 holder.swipeLayout.close(false);
                 holder.swipeLayout.setLockDrag(true);
-
                 binderHelper.lockSwipe(arrayList.get(position).getUserid());
-
-
-
-                holder.textView.setText(arrayList.get(position).getmName());
-                Glide.with(context).load(arrayList.get(position).getImgUrl()).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.pf_img);
 
 
 
@@ -159,6 +145,11 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
             }
         });
 
+        holder.textView.setText(arrayList.get(position).getmName());
+        Glide.with(context).load(arrayList.get(position).getImgUrl()).diskCacheStrategy(DiskCacheStrategy.NONE).into(holder.pf_img);
+
+
+
         holder.declinetxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,7 +162,6 @@ public class DashbordAdapter extends RecyclerView.Adapter<DashbordAdapter.Custom
                 holder.cancelImg.setVisibility(View.VISIBLE);
                 holder.cancelImg.setImageResource(R.drawable.ic_baseline_cancel_24);
                 holder.img.setImageResource(R.drawable.ic_cancel_svgrepo_com);
-
 
                 holder.swipeLayout.close(false);
                 holder.swipeLayout.setLockDrag(true);

@@ -69,7 +69,6 @@ public class InfoHrActivity extends AppCompatActivity {
         email_textview = headerview.findViewById(R.id.textView_email);
 
 
-//
         databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(auth.getCurrentUser().getUid());
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -99,9 +98,9 @@ public class InfoHrActivity extends AppCompatActivity {
                     AllData allData = snapshot.getValue(AllData.class);
 
                        if(allData.getImgUrl() !=null){
+
                            Glide.with(InfoHrActivity.this).load(allData.getImgUrl()).into(profile_img);
                        }
-
                        else {
 
                            profile_img.setImageResource(R.drawable.ic_user);
@@ -261,8 +260,9 @@ public class InfoHrActivity extends AppCompatActivity {
                     auth.signOut();
 
 
+
                     Toast.makeText(InfoHrActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(InfoHrActivity.this, LoginNewActivity.class));
+                    startActivity(new Intent(InfoHrActivity.this, LogActivity.class));
                 }
 
                 @Override

@@ -49,6 +49,7 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
     String value;
     DashbordAdapter dashbordAdapter;
     private DatabaseReference databaseReference1;
+    AllData allData;
 
 
     @Override
@@ -62,15 +63,6 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("user");
         recyclerView = findViewById(R.id.recyclerview1);
-
-
-//        if (Build.VERSION.SDK_INT >= 21) {
-//
-//            Window window = this.getWindow();
-//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            window.setStatusBarColor(this.getResources().getColor(R.color.statuscolor));
-//        }
 
 
         dashboradBinding.backArrow.setOnClickListener(new View.OnClickListener() {
@@ -87,25 +79,19 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
 
                 for (DataSnapshot snapshot1 : snapshot.getChildren()) {
 
-                    AllData allData = snapshot1.getValue(AllData.class);
+                    allData = snapshot1.getValue(AllData.class);
                     String selected = allData.getMselected();
 
-                    Log.e("sfdfdf", selected);
+
 //                    String status = allData.getCheckedStatus();
 
-
-
                     boolean check = allData.isVerifyCheck();
-
-
-
 
                     if (selected.equals("Employee")) {
 
                         arrayList.add(allData);
                         recyclerView.setLayoutManager(new LinearLayoutManager(DashboradActivity.this));
-
-                        dashbordAdapter = new DashbordAdapter(DashboradActivity.this, arrayList, value, new UserStatusIntetFace() {
+                        dashbordAdapter = new DashbordAdapter(DashboradActivity.this, arrayList, new UserStatusIntetFace() {
                             @Override
                             public void userStatusInterface(String statuschecked, String postion) {
 
@@ -121,7 +107,6 @@ public class DashboradActivity extends AppCompatActivity implements UserInterfac
 
                                     }
                                 });
-
 
                                 recyclerView.setAdapter(dashbordAdapter);
 

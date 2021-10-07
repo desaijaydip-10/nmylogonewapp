@@ -32,7 +32,7 @@ public class DashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
 
-        auth= FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
 
         changeTexView = findViewById(R.id.changeTextview);
 
@@ -44,16 +44,11 @@ public class DashActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                sdfdf = snapshot.child("checkedStatus").getValue(String.class);
 
-
-                sdfdf=  snapshot.child("checkedstatus").getValue(String.class);
-
-                if(sdfdf.equals("0")){
+                if (sdfdf.equals("0")) {
                     changeTexView.setText("PendindRequest");
-                }
-
-                else if(sdfdf.equals("1")){
-
+                } else if (sdfdf.equals("1")) {
 
                     startActivity(new Intent(DashActivity.this, UserAttendenceActivity.class));
                 }
@@ -82,7 +77,7 @@ public class DashActivity extends AppCompatActivity {
                             snapshot.getRef().child("userlogin").setValue("0");
                             auth.signOut();
                             Toast.makeText(DashActivity.this, "logut succesfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(DashActivity.this, LoginNewActivity.class));
+                            startActivity(new Intent(DashActivity.this, LogActivity.class));
                         }
 
                         @Override
@@ -93,10 +88,6 @@ public class DashActivity extends AppCompatActivity {
                     });
 
                 }
-
-
-
-
 
 
             }

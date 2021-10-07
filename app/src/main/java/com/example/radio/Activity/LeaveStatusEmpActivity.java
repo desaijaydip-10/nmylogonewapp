@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -33,11 +34,11 @@ public class LeaveStatusEmpActivity extends AppCompatActivity {
     DatabaseReference reference, ref, refrences;
     ArrayList<LeaveGetModel> arrayList;
     String userfirstid;
+    int sum = 0;
     public static ArrayList<AllData> allDataArrayList;
 
 
     ArrayList<NewDataGetModel> dataGetModels;
-//    public static ArrayList<AllData> allDataArrayList;
 
 
     @Override
@@ -50,7 +51,10 @@ public class LeaveStatusEmpActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         arrayList = new ArrayList<>();
 
+
         dataGetModels = new ArrayList<>();
+
+
         allDataArrayList = new ArrayList<>();
 
 
@@ -87,47 +91,42 @@ public class LeaveStatusEmpActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
                             allDataArrayList.clear();
                             for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-
 
                                 String userid = snapshot1.getKey();
 
                                 if (userfirstid.equals(userid)) {
 
-
                                     allDataArrayList.add(allData);
 
-                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("timeselector").child(userid);
-                                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+
+                                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+                                    Query query= databaseReference.child("timeselector").child(userid);
+
+
+                                    query.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                                             arrayList.clear();
 
-
                                             for (DataSnapshot snapshot11 : snapshot.getChildren()) {
-
-
-                                                if (snapshot11.getValue() != null) {
+                                                if (snapshot11.getValue() !=  null && snapshot.exists() ) {
 
                                                     LeaveGetModel leaveGetModel = snapshot11.getValue(LeaveGetModel.class);
+
+                                                       long s  = snapshot.getChildrenCount();
+                                                       int  sum= Integer.parseInt(String.valueOf(s));
+
                                                     String category = leaveGetModel.getCategorychoose();
 
                                                     if (category.equals("Employee")) {
-
                                                         arrayList.add(leaveGetModel);
-
                                                     }
-
                                                     leaveStatusLayoutBinding.employerecyclerview1.setLayoutManager(new LinearLayoutManager(LeaveStatusEmpActivity.this));
-
-                                                    EmployeStatusAdapter employeStatusAdapter = new EmployeStatusAdapter(LeaveStatusEmpActivity.this, arrayList, allDataArrayList);
+                                                    EmployeStatusAdapter employeStatusAdapter = new EmployeStatusAdapter(LeaveStatusEmpActivity.this, arrayList, sum, allDataArrayList);
                                                     employeStatusAdapter.notifyDataSetChanged();
                                                     leaveStatusLayoutBinding.employerecyclerview1.setAdapter(employeStatusAdapter);
-
-
                                                 }
 
                                             }

@@ -64,7 +64,6 @@ public class RequestEmpFragment extends Fragment {
 
         databaseReference.addValueEventListener(new ValueEventListener() {
 
-
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -83,7 +82,7 @@ public class RequestEmpFragment extends Fragment {
 
                         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                        dashbordAdapter = new DashbordAdapter(getContext(), arrayList, value, new UserStatusIntetFace() {
+                        dashbordAdapter = new DashbordAdapter(getContext(), arrayList, new UserStatusIntetFace() {
                             @Override
                             public void userStatusInterface(String statuschecked, String postion) {
 

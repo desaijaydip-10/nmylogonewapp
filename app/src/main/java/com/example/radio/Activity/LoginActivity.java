@@ -47,13 +47,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-//
-
+//        binding  = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         auth = FirebaseAuth.getInstance();
-
-
         arrayList = new ArrayList<>();
 
 

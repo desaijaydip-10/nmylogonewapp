@@ -1,12 +1,19 @@
 package com.example.radio.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.radio.Adapter.EmployeDetailAdapter;
@@ -56,7 +63,6 @@ public class EmployeDetailsActivity extends AppCompatActivity {
 
                     String cat = snapshot1.getKey();
 
-
                     FirebaseDatabase.getInstance()
                             .getReference()
                             .child("timeselector")
@@ -64,14 +70,13 @@ public class EmployeDetailsActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-//                               String  dates=  snapshot.child("leavetype").getValue(String.class);
+//                                String  dates=  snapshot.child("leavetype").getValue(String.class);
 
                             LeaveGetModel leaveGetModel = snapshot.getValue(LeaveGetModel.class);
                             modelArrayList.add(leaveGetModel);
 
 
                             employeDetailsBinding.recyclerviewEmpDetails.setLayoutManager(new LinearLayoutManager(EmployeDetailsActivity.this));
-
                             EmployeDetailAdapter employeDetailAdapter = new EmployeDetailAdapter(EmployeDetailsActivity.this, modelArrayList, new EmployeStatusInterface() {
                                 @Override
                                 public void employeStatus(String status, String date, String userid) {
@@ -80,8 +85,52 @@ public class EmployeDetailsActivity extends AppCompatActivity {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                                            if (status.equals("2")) {
 
-                                            snapshot.getRef().child("statuscheck").setValue(status);
+
+
+                                                AlertDialog.Builder builder = new AlertDialog.Builder(EmployeDetailsActivity.this);
+
+                                                AlertDialog dialog = builder.create();
+                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                                View view = getLayoutInflater().inflate(R.layout.custom_alert_dialoge, null);
+
+                                                Button button = view.findViewById(R.id.submitButton);
+                                                EditText editText = view.findViewById(R.id.editreasoneTextView);
+
+                                                button.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+
+                                                        if (editText.getText().toString().isEmpty()) {
+
+
+                                                            editText.setError("Filled Required");
+                                                            editText.requestFocus();
+
+                                                        } else {
+
+                                                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("timeselector").child(userid).child(date);
+                                                            reference.getRef().child("sendMessage").setValue(editText.getText().toString());
+                                                            snapshot.getRef().child("statuscheck").setValue(status);
+
+                                                            snapshot.getRef().child("statuscheck").setValue(status);
+
+                                                            dialog.dismiss();
+                                                        }
+
+
+                                                    }
+                                                });
+
+                                                dialog.setView(view);
+                                                dialog.show();
+                                            } else {
+                                                snapshot.getRef().child("statuscheck").setValue(status);
+
+                                            }
+
+
                                         }
 
                                         @Override
@@ -99,13 +148,12 @@ public class EmployeDetailsActivity extends AppCompatActivity {
 
                             employeDetailAdapter.notifyDataSetChanged();
                             employeDetailsBinding.recyclerviewEmpDetails.setAdapter(employeDetailAdapter);
-
-
                         }
 
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
+
 
                         }
                     });

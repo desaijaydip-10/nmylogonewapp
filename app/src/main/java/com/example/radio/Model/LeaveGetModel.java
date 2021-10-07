@@ -11,13 +11,14 @@ public class LeaveGetModel {
     int leavedate;
     String userid;
     String categorychoose;
-
-
-
     String  leaveTaken;
 
 
-    public LeaveGetModel(String userid,String leavetype, String startdate, String enddate, String leaveday, String reasone, String statuscheck, int leavedate,   String categorychoose, String leaveTaken) {
+
+    String notifiy;
+
+
+    public LeaveGetModel(String userid,String leavetype, String startdate, String enddate, String leaveday, String reasone, String statuscheck, int leavedate,   String categorychoose, String leaveTaken, String notifiy) {
         this.leavetype = leavetype;
         this.startdate = startdate;
         this.enddate = enddate;
@@ -28,10 +29,19 @@ public class LeaveGetModel {
         this.userid=userid;
         this.categorychoose=categorychoose;
         this.leaveTaken = leaveTaken;
+        this.notifiy = notifiy;
     }
 
 
     public LeaveGetModel() {
+    }
+
+    public String getNotifiy() {
+        return notifiy;
+    }
+
+    public void setNotifiy(String notifiy) {
+        this.notifiy = notifiy;
     }
 
 

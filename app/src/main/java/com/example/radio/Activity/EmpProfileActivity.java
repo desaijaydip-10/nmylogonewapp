@@ -51,11 +51,9 @@ public class EmpProfileActivity extends AppCompatActivity {
         name_text = findViewById(R.id.textView23);
         email_txt = findViewById(R.id.textView24);
         number_textview = findViewById(R.id.phonenumberTextView);
-
         editimg = findViewById(R.id.editImg);
-
-
         back_img = findViewById(R.id.backarrow);
+
 
 
 
